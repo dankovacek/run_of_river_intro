@@ -1,0 +1,567 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Run of River vs. Storage Hydropower in BC: A Cursory Introduction &#8212; ITG Reading Group</title>
+    
+  <link rel="stylesheet" href="../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.40e2e510f6b7d1648584402491bb10fe.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.3da636dd464baa7582d2.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.d31b09fe5c1d09cb49b26a786de4a05d.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="The Information Catastrophe: 13 Jan 2021" href="basic_power_notebook.html" />
+    <link rel="prev" title="Content with notebooks" href="notebooks.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../index.html">
+  
+  
+  <h1 class="site-logo" id="site-title">ITG Reading Group</h1>
+  
+</a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="notebooks.html">
+   Content with notebooks
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Run of River vs. Storage Hydropower in BC: A Cursory Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="basic_power_notebook.html">
+   The Information Catastrophe: 13 Jan 2021
+  </a>
+ </li>
+</ul>
+
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/notebooks/SiteC.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+        <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/dankovacek/info_catastrophe"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/dankovacek/info_catastrophe/issues/new?title=Issue%20on%20page%20%2Fnotebooks/SiteC.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+                title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/dankovacek/info_catastrophe/main?urlpath=tree/content/notebooks/SiteC.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bc-energy-plan">
+   BC Energy Plan
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#criticism">
+   Criticism
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#optimization-of-resource-usage">
+   Optimization of Resource Usage
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#projected-electricity-demand">
+   Projected Electricity Demand
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#firm-vs-non-firm-energy">
+   Firm vs. Non-Firm Energy
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clean-power-call-awards">
+   Clean Power Call Awards
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estimated-cost-of-site-c">
+   Estimated Cost of Site C
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discussion-question">
+   Discussion Question
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-can-environmental-and-social-objectives-be-set-and-evaluated-such-that-they-are-more-prominent-in-decisions-about-how-bc-generates-the-electricity-we-need">
+     How can environmental and social objectives be set and evaluated such that they are more prominent in decisions about how BC generates the electricity we need?
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="run-of-river-vs-storage-hydropower-in-bc-a-cursory-introduction">
+<h1>Run of River vs. Storage Hydropower in BC: A Cursory Introduction<a class="headerlink" href="#run-of-river-vs-storage-hydropower-in-bc-a-cursory-introduction" title="Permalink to this headline">¶</a></h1>
+<p>To start, I’m not an expert on energy policy or history.  The only firm belief I have is that no matter how we supply electricity for the province of British Columbia, the process will be angry and bitter in proportion to the financial and political capital at stake.  The information below is neither complete nor rigorous, but it’s a starting point to knowing more about the current state of hydropower development in BC.</p>
+<div class="section" id="bc-energy-plan">
+<h2>BC Energy Plan<a class="headerlink" href="#bc-energy-plan" title="Permalink to this headline">¶</a></h2>
+<p>In 2007, the provincial government (Liberal, Gordon Campbell) presented a <a class="reference external" href="https://www2.gov.bc.ca/assets/gov/farming-natural-resources-and-industry/electricity-alternative-energy/bc_energy_plan_2007.pdf">mandate for clean power</a> with the goal of energy self-sufficiency, or 90% of the province’s energy consumption coming from renewable energy.  At the time, the <a class="reference external" href="https://www.ipcc.ch/report/ar4/syr/">latest report from the International Panel on Climate Change (IPCC)</a> was showing widespread consensus among international scientists of the effect of greenhouse gases on climate.  Also at the time in BC, an energy shortfall was projected, as described in the <a class="reference external" href="https://www.bcuc.com/Documents/Proceedings/2008/BCH_LTAP_B-1-1_APPENDICES/Appendix%20D.pdf">2008 Long-term Aquisition Plan (LTAP)</a>.  In order to meet the projected shortfall, the plan was to issue a request for proposals (RFP) on the open market for renewable energy projects.  Independent power producers competed for a limited amount of energy purchase agreements (EPAs) from BC Hydro.  Details of the energy acquisition plan can be <a class="reference external" href="https://www.bchydro.com/content/dam/hydro/medialib/internet/documents/planning_regulatory/acquiring_power/2010q3/cpc_rfp_process_report.pdf">found here</a>, but the basic idea was to accept some cost of prioritizing renewable energy over fossil-fuel energy, reduce the risk of cost overruns typical of mega projects, and do so while pursuing environmental and social obligations and goals.</p>
+<p>By 2009, BC Hydro awarded contracts to purchase roughly 3300 GWh of energy from the private sector, and as shown below the program resulted in more than doubling of renewable energy from private developers over the subsequent decade.</p>
+<p><img alt="" src="../_images/bch_aq.jpg" /></p>
+</div>
+<div class="section" id="criticism">
+<h2>Criticism<a class="headerlink" href="#criticism" title="Permalink to this headline">¶</a></h2>
+<p>While many of the arguments concerning the development of new energy supply in BC are presented in terms of financial impacts (environmental and social impacts are covered to a lesser extent), ultimately the battle is for control over billions of dollars in contracts.  Site C is in the best interest of <a class="reference external" href="https://thenarwhal.ca/ndp-union-heavyweights-come-out-fighting-site-c/">strong labour unions</a> that support the NDP.  Construction of IPP projects also requires the work of unionized labourers, but the project owners themselves are not crown corporations like BC Hydro, rather they are publicly traded companies like <a class="reference external" href="https://www.innergex.com/">Innergex Renewable Energy</a>, or private corporations like <a class="reference external" href="https://bluearthrenewables.com/">BluEarth Renewables</a>.  Private projects like the Toba Montrose include <a class="reference external" href="https://nationtalk.ca/story/plutonic-power-finalizes-impact-benefits-agreement-with-klahoose-first-nation">agreements with the local First Nations</a> (in this case the Klahoose First Nation) establishing the acknowledgement of rights and title to the land, specifying royalties throughout the project life, and specifying construction contracts and employment of First Nations people.  First Nations are part owners in other IPP projects, such as the Kwoiek Creek hydroelectric project, which is an <strong>equal partnership</strong> between the Kanaka Bar Band and Innergex Renewable Energy.  The Tla-o-qui-aht nation on the other hand are the <strong>majority owners</strong> of the Haa-ak-suuk hydropower project on Vancouver Island.</p>
+<p>IPPs are often criticised because profits go to private rather than crown corporations, based on the idea that crown corporations are “owned” by taxpayers.  The counter argument is that IPPs bear the burden of financial risk.  The present value of an energy project is primarily a function of the cost of construction and the cost of capital.  With Site C, the original cost of \<span class="math notranslate nohighlight">\(6B and is [now estimated at \\\)</span>16B](https://www.cbc.ca/news/canada/british-columbia/site-c-announcement-friday-1.5928719) has continued to escalate, ultimately to be paid for by both higher electricity rates as well as income tax.  An analysis by <a class="reference external" href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3742136">Dolter et al.</a> suggested the Site C project was not feasible when the estimated cost was roughly \<span class="math notranslate nohighlight">\(11B.  This kind of cost overrun would simply terminate a private project and the loss would be borne by the lender (or shareholders).  The often criticised higher contract price offered to an IPP can thus be seen as an insurance cost.  On the other hand, despite the greater cost of the megaproject, employing a large number of people for several years at the Site C project can be seen as a major benefit.  The question remains how will \\\)</span>16B end up being distributed between British Columbians employed on the project, and multinational corporations such as <a class="reference external" href="https://www.sitecproject.com/bc-hydro-awards-contract-for-site-c-main-civil-works-to-peace-river-hydro-partners">the main civil works contractor, the Spanish company Acciona</a>.</p>
+<p>The Clean Power Call received <a class="reference external" href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;ved=2ahUKEwiOg_3tjo3vAhWYsp4KHV43BOcQFjAAegQIBBAD&amp;url=https%3A%2F%2Fwww2.gov.bc.ca%2Fassets%2Fgov%2Ffarming-natural-resources-and-industry%2Felectricity-alternative-energy%2Felectricity%2Fbc-hydro-review%2Fbch19-158-ipp_report_february_11_2019.pdf&amp;usg=AOvVaw3qKRyAE_EncoIWhqYvBEFy">criticism</a>, in particular the contract price offered to power developers, the accuracy of projected demand, and the <a class="reference external" href="https://www.watershed-watch.org/publications/files/RoR-CitizensGuide.pdf">environmental and social impact of work in aquatic ecosystems</a>.  The BC Sustainable Energy Association <a class="reference external" href="https://www.mccarthy.ca/en/insights/blogs/canadian-energy-perspectives/zapping-back-clean-energy-bc-responds-critical-review-bc-hydros-purchase-power-bc-ipps">disputed the allegation</a> that BC Hydro was instructed to fabricate demand.  The provincial government formed in 2017 (NDP, Horgan) <a class="reference external" href="https://archive.news.gov.bc.ca/releases/news_releases_2017-2021/2019EMPR0003-000228.htm">officially criticised the LTAP in 2019</a> as one that would cost ratepayers more than 16 billion over 20 years. BC MLA Andrew Weaver (Green) <a class="reference external" href="http://www.andrewweavermla.ca/category/energy-mines/site-c/">disputed this criticism</a>, pointing out that an amendment to the Clean Energy Act would classify fossil-derived energy as ‘clean electricity’.</p>
+<p>Site C was (and continues to be) criticised for many of the same reasons as IPPs, such as cost, and environmental and social impacts.  For a broader review of impacts of the Site C project, see <a class="reference external" href="http://watergovernance.sites.olt.ubc.ca/files/2017/11/2-Site-C-Economics-Report-FINAL.pdf"><em>Reassessing the Need for Site C (Hendriks et al., 2017)</em></a>.  The BC Sustainable Energy Association also <a class="reference external" href="https://www.bcsea.org/bcsea-news/site-c-there-better-way">contributed to the debate over Site C</a>, pointing to broad evidence that cost estimates for megaprojects tend to be systematically biased.  <a class="reference external" href="https://doi-org.ezproxy.library.ubc.ca/10.1080/01446193.2019.1645344">Zhang et al. (2019) studied the cost growth trends in large public projects</a>, finding that P3 consistenly outperforms traditional models in cost and schedule.</p>
+</div>
+<div class="section" id="optimization-of-resource-usage">
+<h2>Optimization of Resource Usage<a class="headerlink" href="#optimization-of-resource-usage" title="Permalink to this headline">¶</a></h2>
+<p>At the time of the Clean Power Call, BC Hydro was a net-importer of electricity.  Energy trading allows BC Hydro to optimize the use of water in its reservoirs among neighbouring regions with diverse energy sources.  While the capacity existed to satisfy demand in British Columbia at the time, the province was importing more energy than it exported because the cost of purchasing non-renewable energy sources from out of province was at times cheaper than dispatching energy from within BC.  Much of BC’s electricity generating capacity is in a few large reservoirs in the Columbia and Peace regions, whose inflows are characterized by large volumes of snowmelt in spring, and relative scarcity in winter and late summer.</p>
+<p><img alt="Major reservoirs in the Columbia Region" src="../_images/columbia_region.jpg" /></p>
+</div>
+<div class="section" id="projected-electricity-demand">
+<h2>Projected Electricity Demand<a class="headerlink" href="#projected-electricity-demand" title="Permalink to this headline">¶</a></h2>
+<p>Fueling the criticism that BC Hydro was “forced to pay too much for energy it didn’t need” was the 2008 great recession, when energy consumption in Canada fell 3%, and 5% in the subsequent year, according to the <a class="reference external" href="https://www.iaee.org/en/publications/proceedingsabstractpdf.aspx?id=16247">National Energy Board</a>.  BC Hydro has also been criticised for <a class="reference external" href="https://commonsensecanadian.ca/bc-hydro-inflates-demand-justify-site-c-dam/">inflating energy demand projections</a> in blog-type publications that have some value in raising interesting points, but are not held to the same standard as peer reviewed academic research.</p>
+<p>The claim that BC Hydro inflated demand in order to justify the Site C project is unfairly dismissive of the efforts of many of the BC’s top scientists and engineers working on the enormously difficult task of long-term demand forecasting.  The figure below is a demand projection from BC Hydro.  The red point was added by me to show that the problem of forecasting is enormously difficult.  Criticising forecasts is easy because it is years before hypotheses can be tested.  Many critics point to future demand from an LNG market that may or may not materialize, or economic recessions (that occurred in 2008, rebounded through 2019, catered in 2020 with the pandemic, etc.)  The mechanisms governing long-term energy demand are inherently random processes, and they cannot be predicted deterministically.</p>
+<p>The Canadian Centre for Policy Alternatives also <a class="reference external" href="https://www.policyalternatives.ca/publications/reports/revisiting-economic-case-site-c">criticized demand projections</a>, a key point in their argument being the viability of the LNG industry that the provincial goverment (Liberal, Christy Clark) was championing.  <a class="reference external" href="https://www2.gov.bc.ca/gov/content/industry/natural-gas-oil/lng/lng-projects">Several projects are currently in development</a>.</p>
+<p><img alt="2013 Energy Demand - Point added for 2018 BC Hydro Electricity Generated" src="../_images/energy_fc.jpg" /></p>
+</div>
+<div class="section" id="firm-vs-non-firm-energy">
+<h2>Firm vs. Non-Firm Energy<a class="headerlink" href="#firm-vs-non-firm-energy" title="Permalink to this headline">¶</a></h2>
+<p>How did BC Hydro structure the CPC to incentivize electricity generation when it was most needed?  One way was to offer scheduled price incentives at both seasonal and daily levels.  The incentives are described in the plot below, where it’s shown that energy offered in spring is less valuable than winter.  Most of BC’s electricity comes from a few large reservoirs, including the WAC Bennett in the Peace region, and the Mica, Revelstoke, and Keenlyside dams in the Columbia river basin.  Similar timing and duration of spring snowmelt means there is a lot of water available while energy demand for heating homes is decreasing in spring as temperatures increase.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Seasonal and time-of-day adjustment data is from the BC Hydro RFP issuance documents <a class="reference external" href="https://www.bchydro.com/work-with-us/selling-clean-energy/closed-offerings/clean-power-call/documents.html">here</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/firm_energy.csv&#39;</span><span class="p">)</span>
+<span class="n">fe</span><span class="o">.</span><span class="n">plot</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../_images/SiteC_7_1.png" src="../_images/SiteC_7_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="clean-power-call-awards">
+<h2>Clean Power Call Awards<a class="headerlink" href="#clean-power-call-awards" title="Permalink to this headline">¶</a></h2>
+<p>Below is a table of successful projects from the 2007 Clean Power Call (<a class="reference external" href="https://www.bchydro.com/work-with-us/selling-clean-energy/closed-offerings/clean-power-call/outcome.html">data source: BC Hydro</a>), including hydro, wind, biomass, waste heat, and for some reason coal.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;data/CPC.csv&#39;</span><span class="p">)</span>
+<span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;ENERGY SOURCE&#39;</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Coal / Biomass&#39;, &#39;Biomass&#39;, &#39;Biomass / Other&#39;, &#39;Wind&#39;, &#39;Water&#39;, &#39;Waste Heat&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># filter just for the hydropower sources</span>
+<span class="n">hydro</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;ENERGY SOURCE&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Water&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">hydro</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>BIDDER NAME</th>
+      <th>PROJECT NAME</th>
+      <th>NEARBY CITY</th>
+      <th>ENERGY SOURCE</th>
+      <th>PLANT CAPACITY (MW)</th>
+      <th>TOTAL ENERGY (GWH/YR)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Plutonic Power Corporation</td>
+      <td>East Toba and Montrose Hydroelectric Project</td>
+      <td>Powell River</td>
+      <td>Water</td>
+      <td>196.0</td>
+      <td>702</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>3986314 Canada Inc.</td>
+      <td>Canada - Glacier / Howser / East - Project</td>
+      <td>Nelson</td>
+      <td>Water</td>
+      <td>90.5</td>
+      <td>341</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Kwalsa Energy Limited Partnership</td>
+      <td>Kwalsa Energy Project</td>
+      <td>Mission</td>
+      <td>Water</td>
+      <td>85.9</td>
+      <td>384</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Anyox Hydro Electric Corp.</td>
+      <td>Anyox and Kitsault River Hydroelectric Projects</td>
+      <td>Alice Arm</td>
+      <td>Water</td>
+      <td>56.5</td>
+      <td>242</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Upper Stave Energy Limited Partnership</td>
+      <td>Upper Stave Energy Project</td>
+      <td>Mission</td>
+      <td>Water</td>
+      <td>54.7</td>
+      <td>264</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">hydro</span><span class="p">[</span><span class="s1">&#39;PLANT CAPACITY (MW)&#39;</span><span class="p">],</span> <span class="n">hydro</span><span class="p">[</span><span class="s1">&#39;TOTAL ENERGY (GWH/YR)&#39;</span><span class="p">],</span> <span class="s1">&#39;bo&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;Plant Capacity [MW]&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Total Energy (Annual) [GWh]&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Total Energy (Annual) [GWh]&#39;)
+</pre></div>
+</div>
+<img alt="../_images/SiteC_11_1.png" src="../_images/SiteC_11_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">total_energy</span> <span class="o">=</span> <span class="n">hydro</span><span class="p">[</span><span class="s1">&#39;TOTAL ENERGY (GWH/YR)&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Total energy generation is </span><span class="si">{</span><span class="n">total_energy</span><span class="si">}</span><span class="s1"> GWh/year for </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">hydro</span><span class="p">)</span><span class="si">}</span><span class="s1"> projects&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total energy generation is 3077 GWh/year for 30 projects
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Note</strong>: this esimate is a ‘back of envelope’ figure, a very cursory estimate.  There are many more details in the procurement process that affect the actual amounts paid to IPPs, for a more detailed analysis, read the <a class="reference external" href="https://www.bchydro.com/content/dam/hydro/medialib/internet/documents/planning_regulatory/acquiring_power/2010q3/cpc_rfp_process_report.pdf">Energy Aquisition Plan</a>, specifically the <a class="reference external" href="https://www.bchydro.com/work-with-us/selling-clean-energy/closed-offerings/clean-power-call/documents.html">Price Levelization Model</a>.</p>
+<p>EPA contracts were typically for 20 years, and averaged \$100/MWh.  The present value of the contracts is as follows, assuming a discount rate of 5%.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy_financial</span> <span class="k">as</span> <span class="nn">npf</span>
+
+<span class="n">mean_annual_energy</span> <span class="o">=</span> <span class="n">total_energy</span> <span class="o">*</span> <span class="mi">1000</span> <span class="c1"># Total CPC energy contracts, GWh/year, convert to MWh/year</span>
+<span class="n">avg_contract_price</span> <span class="o">=</span> <span class="mi">100</span> <span class="c1">#$100/MWh</span>
+
+<span class="c1"># mean annual costs for 20 year contract, all projects</span>
+<span class="n">annual_costs</span> <span class="o">=</span> <span class="p">[</span><span class="n">mean_annual_energy</span> <span class="o">*</span> <span class="n">avg_contract_price</span> <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)]</span>
+
+<span class="c1"># calculate the net present value of the EPA contracts</span>
+<span class="n">npv</span> <span class="o">=</span> <span class="n">npf</span><span class="o">.</span><span class="n">npv</span><span class="p">(</span><span class="n">rate</span><span class="o">=</span><span class="mf">0.05</span><span class="p">,</span> <span class="n">values</span><span class="o">=</span><span class="n">annual_costs</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The NPV of the 2007 CPC is $</span><span class="si">{</span><span class="n">npv</span><span class="o">/</span><span class="mf">1E9</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">B&#39;</span><span class="p">)</span>
+
+<span class="n">unit_energy_npv</span> <span class="o">=</span> <span class="n">npv</span> <span class="o">/</span> <span class="p">(</span><span class="n">mean_annual_energy</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The present value unit cost of </span><span class="si">{</span><span class="n">mean_annual_energy</span><span class="o">/</span><span class="mf">1E3</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1"> GWh annual energy supply from the CPC is $</span><span class="si">{</span><span class="n">unit_energy_npv</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1">$/MWh.&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The NPV of the 2007 CPC is $4.0B
+The present value unit cost of 3077 GWh annual energy supply from the CPC is $1309$/MWh.
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="estimated-cost-of-site-c">
+<h2>Estimated Cost of Site C<a class="headerlink" href="#estimated-cost-of-site-c" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://www.bchydro.com/energy-in-bc/projects/site_c.html">According to BC Hydro</a>, the 1100 MW capacity Site C project is estimated to generate 5100 GWh (mean annual).</p>
+<p>The current estimated capital cost of Site C is \<span class="math notranslate nohighlight">\(16B, roughly \\\)</span>10B greater than the original estimate. (<a class="reference external" href="https://www.cbc.ca/news/canada/british-columbia/site-c-announcement-friday-1.5928719">CBC</a>)</p>
+<p>Admittedly, the comparison below is likely too simplified to be meaningful, but it raises the question of how such comparisons might be improved?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">siteC_annual_energy</span> <span class="o">=</span> <span class="mi">5100</span> <span class="o">*</span> <span class="mi">1000</span> <span class="c1"># convert mean annual energy to MWh</span>
+<span class="n">siteC_unit_cost</span> <span class="o">=</span> <span class="mf">16E9</span> <span class="o">/</span> <span class="n">siteC_annual_energy</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The present value *construction* cost of </span><span class="si">{</span><span class="n">siteC_annual_energy</span><span class="o">/</span><span class="mf">1E3</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1"> GWh annual energy supply in the CPC is $</span><span class="si">{</span><span class="n">siteC_unit_cost</span><span class="si">:</span><span class="s1">.0f</span><span class="si">}</span><span class="s1">/MWh&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The present value *construction* cost of 5100 GWh annual energy supply in the CPC is $3137/MWh
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="discussion-question">
+<h2>Discussion Question<a class="headerlink" href="#discussion-question" title="Permalink to this headline">¶</a></h2>
+<p>Comparing the costs and benefit of mega projects vs. smaller distributed energy generation has been the focus of vigorous debate for decades.</p>
+<p>These debates often focus primarily on finance, which despite being difficult to make accurate estimates, are still easier to quantify than environmental and social aspects.</p>
+<div class="section" id="how-can-environmental-and-social-objectives-be-set-and-evaluated-such-that-they-are-more-prominent-in-decisions-about-how-bc-generates-the-electricity-we-need">
+<h3>How can environmental and social objectives be set and evaluated such that they are more prominent in decisions about how BC generates the electricity we need?<a class="headerlink" href="#how-can-environmental-and-social-objectives-be-set-and-evaluated-such-that-they-are-more-prominent-in-decisions-about-how-bc-generates-the-electricity-we-need" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="notebooks.html" title="previous page">Content with notebooks</a>
+    <a class='right-next' id="next-link" href="basic_power_notebook.html" title="next page">The Information Catastrophe: 13 Jan 2021</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Dan Kovacek<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="../_static/js/index.3da636dd464baa7582d2.js"></script>
+
+
+    
+  </body>
+</html>
