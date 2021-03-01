@@ -23,7 +23,7 @@ There are many communities around BC that are not grid connected, typically rely
 
 Important!  We had a private landowner a few years ago approach the class with an information package about his property.  He wanted to develop a micro hydro project on the small creek that ran through his private land.  One group of students took up the challenge to estimate the resource potential, and made a valiant effort.  The owner wasn't happy because we didn't give him the answer he was looking for, **which is a more important result than giving into the temptation to find some perspective that will yield a favourable result**.
 
-This presentation uses the [Jupyter Book](https://jupyterbook.org/intro.html) format, which is not widely used in industry, but is being adopted widely in academia.  Jupyter Book is basically a way to bring together a bunch of interactive documents with slick formatting.  A calculation file that doubles as a report, where anyone can step into your calculation to check your work or build off an idea.  Below is an example of the type of interactivity that I believe reports can greatly benefit from.  In the subsequent discussion about the hydropower industry in BC, a common criticism is in the use of source information and methodology, and the lack of disclosure of both.  Transparency requires access to information, and Jupyter Book greatly reduces the technological barriers to doing so.
+This presentation uses the [Jupyter Book](https://jupyterbook.org/intro.html) format, which is not widely used in industry, but is being adopted widely in academia.  Jupyter Book is basically a way to bring together a bunch of interactive documents with slick formatting.  A calculation file that doubles as a report, where anyone can step into your calculation to check your work or build off an idea.  Below is an example of the type of interactivity that I believe reports can greatly benefit from.  In the subsequent discussion about the hydropower industry in BC, a common criticism is in the use of source information and methodology, and the lack of disclosure of both.  Transparency requires access to information, and Jupyter Book greatly reduces the technological barriers to doing so. 
 
 ```{figure} img/interactive_app.gif
 ---
@@ -33,13 +33,3 @@ name: interactive-app
 Interactive application exploring water level at two locations on the same river.  
 ```
 
-
-
-## Publication
-
-
-
-## References
-
-```{bibliography} references.bib
-```
