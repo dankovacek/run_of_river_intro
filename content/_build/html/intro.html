@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Intro to Run-of-River Hydropower &#8212; ITG Reading Group</title>
+    <title>Intro to Run-of-River Hydropower &#8212; Introduction to Run-of-River Hydropower</title>
     
   <link rel="stylesheet" href="_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -75,8 +75,10 @@
         <div class="navbar-brand-box">
 <a class="navbar-brand text-wrap" href="index.html">
   
+  <img src="_static/dkht_logo.jpg" class="logo" alt="logo">
   
-  <h1 class="site-logo" id="site-title">ITG Reading Group</h1>
+  
+  <h1 class="site-logo" id="site-title">Introduction to Run-of-River Hydropower</h1>
   
 </a>
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
@@ -86,20 +88,15 @@
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="notebooks/notebooks.html">
-   Content with notebooks
+  <a class="reference internal" href="notebooks/SiteC.html">
+   Run of River vs. Storage Hydropower in BC: A Cursory Introduction
   </a>
  </li>
 </ul>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
-  <a class="reference internal" href="notebooks/SiteC.html">
-   Run of River vs. Storage Hydropower in BC: A Cursory Introduction
-  </a>
- </li>
- <li class="toctree-l1">
   <a class="reference internal" href="notebooks/basic_power_notebook.html">
-   The Information Catastrophe: 13 Jan 2021
+   How is Power and Energy Calculated for a Hydropower Project?
   </a>
  </li>
 </ul>
@@ -158,11 +155,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/dankovacek/info_catastrophe"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https://github.com/dankovacek/run_of_river_intro"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/dankovacek/info_catastrophe/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."><button
+            href="https://github.com/dankovacek/run_of_river_intro/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -193,16 +190,6 @@
    Preamble
   </a>
  </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#publication">
-   Publication
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#references">
-   References
-  </a>
- </li>
 </ul>
 
         </nav>
@@ -218,36 +205,21 @@
 <h1>Intro to Run-of-River Hydropower<a class="headerlink" href="#intro-to-run-of-river-hydropower" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="preamble">
 <h2>Preamble<a class="headerlink" href="#preamble" title="Permalink to this headline">¶</a></h2>
-<p>In 2016 I took over teaching EENG 8222, the course in Run-of-River Hydropower.  In my first year teaching, I asked students what they liked and disliked about their courses.  The response was unanimous—students felt the types of problems that were assigned didn’t reflect real problems people work on in industry.  ~~So we spent 12 weeks learning how to format datetime columns in Excel.~~  So I set out to create a series of tasks that I adapted from work I did identifying hydropower resources in various places around the world.</p>
+<p>In 2016 I began teaching <em>EENG 8222: Run-of-River Hydropower</em> at BCIT.  The first year I taught, I asked students what they liked and disliked about their courses.  The response was unanimous—students wanted to work on problems that resemble the problems people work on in industry, using the same tools as used in indusutry.  <s>So we spent 12 weeks learning how to format datetime columns in Microsoft Excel.</s>  In response, I set out to create a series of tasks adapted from my work experience in identifying hydropower resources in various places around the world.</p>
 <div class="figure align-default" id="sierra-leone-hydropower">
 <a class="reference internal image-reference" href="_images/sierra_leone.JPG"><img alt="_images/sierra_leone.JPG" src="_images/sierra_leone.JPG" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-text">Hydropower Resource Study in Sierra Leone, 2010.</span><a class="headerlink" href="#sierra-leone-hydropower" title="Permalink to this image">¶</a></p>
 </div>
-<p>Since we only have two sessions, I’ve adapted a few exercises from my EENG 8222 project curriculum to make this as interactive as possible.  I know some students are working full time, so spending your limited free time watching video lectures is really tough.  I know because I’m also currently a student.</p>
+<p>Since this topic will be presented online in just two sessions, I’ve adapted a few exercises from my EENG 8222 curriculum to incorporate more interactivity.  I know some students are working full time, so spending your limited free time watching video lectures is really tough.  I know this because I’m also currently a student.</p>
 <p><a class="reference external" href="https://jupyter.org/">Jupyter Notebook.</a></p>
 <p>In my class, small teams of students develop a proposal for a run-of-river hydropower project.  The proposal is built progressively throughout the term as we cover the material.  The aim of the two sessions I’m with you is to condense the hands-on parts of the course</p>
 <p>There are many communities around BC that are not grid connected, typically relying on diesel fuel for electricity supply.</p>
-<p>Important!  We had a private landowner a few years ago approach the class with an information package about his property where he wanted to develop a micro hydro project.  One group of students challenged themselves to estimate the resource potential, and made a valiant effort.  The owner wasn’t happy because we didn’t give him the answer he was looking for.</p>
+<p>Important!  We had a private landowner a few years ago approach the class with an information package about his property.  He wanted to develop a micro hydro project on the small creek that ran through his private land.  One group of students took up the challenge to estimate the resource potential, and made a valiant effort.  The owner wasn’t happy because we didn’t give him the answer he was looking for, <strong>which is a more important result than giving into the temptation to find some perspective that will yield a favourable result</strong>.</p>
+<p>This presentation uses the <a class="reference external" href="https://jupyterbook.org/intro.html">Jupyter Book</a> format, which is not widely used in industry, but is being adopted widely in academia.  Jupyter Book is basically a way to bring together a bunch of interactive documents with slick formatting.  A calculation file that doubles as a report, where anyone can step into your calculation to check your work or build off an idea.  Below is an example of the type of interactivity that I believe reports can greatly benefit from.  In the subsequent discussion about the hydropower industry in BC, a common criticism is in the use of source information and methodology, and the lack of disclosure of both.  Transparency requires access to information, and Jupyter Book greatly reduces the technological barriers to doing so.</p>
 <div class="figure align-default" id="interactive-app">
 <a class="reference internal image-reference" href="_images/interactive_app.gif"><img alt="_images/interactive_app.gif" src="_images/interactive_app.gif" style="width: 800px;" /></a>
 <p class="caption"><span class="caption-text">Interactive application exploring water level at two locations on the same river.</span><a class="headerlink" href="#interactive-app" title="Permalink to this image">¶</a></p>
 </div>
-<p>Jupyter Book is basically a way to bring together a bunch of Jupyter notebooks with slick formatting.  Project Jupyter embodies the goals presented by <a class="bibtex reference internal" href="markdown.html#katz-principles" id="id1">[KAB+18]</a>, so the idea is to integrate these goals into today’s reading group subject, <em>The Infomation Catastrophe.</em> <a class="bibtex reference internal" href="markdown.html#vopson-infocat" id="id2">[Vop20]</a></p>
-</div>
-<div class="section" id="publication">
-<h2>Publication<a class="headerlink" href="#publication" title="Permalink to this headline">¶</a></h2>
-</div>
-<div class="section" id="references">
-<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
-<p id="bibtex-bibliography-intro-0"><dl class="citation">
-<dt class="bibtex label" id="katz-principles"><span class="brackets"><a class="fn-backref" href="#id1">KAB+18</a></span></dt>
-<dd><p>Daniel S. Katz, Gabrielle Allen, Lorena A. Barba, Devin R. Berg, Holly Bik, Carl Boettiger, Christine L. Borgman, C. T. Brown, Stuart Buck, Randy Burd, Anita de Waard, Martin P. Eve, Brian E. Granger, Josh Greenberg, Adina Howe, Bill Howe, May Khanna, Timothy L. Killeen, Matthew Mayernik, Erin McKiernan, Chris Mentzel, Nirav Merchant, Kyle E. Niemeyer, Laura Noren, Sarah M. Nusser, Daniel A. Reed, Edward Seidel, MacKenzie Smith, Jeffrey R. Spies, Matt Turk, John D. Van Horn, and Jay Walsh. The principles of tomorrow’s university [version 1; peer review: 2 approved]. <em>F1000Research</em>, 7:1926–1926, 2018.</p>
-</dd>
-<dt class="bibtex label" id="vopson-infocat"><span class="brackets"><a class="fn-backref" href="#id2">Vop20</a></span></dt>
-<dd><p>Melvin M. Vopson. The information catastrophe. <em>AIP advances</em>, 10(8):85014–085014–4, 2020.</p>
-</dd>
-</dl>
-</p>
 </div>
 </div>
 
@@ -285,7 +257,7 @@
     <div class="container">
       <p>
         
-          By Dan Kovacek<br/>
+          By Dan Kovacek, P.Eng.<br/>
         
             &copy; Copyright 2020.<br/>
       </p>

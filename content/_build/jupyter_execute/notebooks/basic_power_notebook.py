@@ -1,313 +1,138 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# # The Information Catastrophe: 13 Jan 2021
+# # How is Power and Energy Calculated for a Hydropower Project?
 # 
-# ## Synopsis (tl;dr)
+# The power that can be generated from pressurized fluid in a pipeline is proportional to density ($\rho$), gravity ($g$), volumetric flow ($Q$), the electro-mechanical efficiency ($\zeta$), and the hydraulic head ($H_{net}$).
 # 
-# 1. The rate of advancement in computing over the last 70 years is staggering, and begs the question of **limits**. 
-# 2. The present rate of "digital content production" (**DCP**) is an estimated $2 \times 10^{19}$ **bits per day**.
-# 3. There are **physical dimensions** to the size of a computational bit:
-#     * currently the area density is $\sim 25 \frac{nm^2}{bit}$
-#     * approximate theoretical lower bound is $\sim 1 \times 10^{-10} \frac{m}{bit}$ (scale of an atom)
-# 4. There is an **energy requirement** to create one bit of information, and a theoretical lower limit:
-#     * currently ?
-#     * theoretical lower limit to create/erase a bit of information is $k_BT \cdot ln(2)$ Joules
-# 5. There is a **mass-energy equivalence** principle (Vopson 2019).  (presented last meeting)
-# 6. The estimated current **growth rate** of DCP is "double digit", accounting for data being erased.
-# 7. Assuming theoretical limits of computational efficiency, **how long until**:
-#     * the energy requirements of DCP exceeds the present power capacity/demand of the earth?
-#     * the *information mass* of DCP exceeds the mass of the earth?
+# $$P = \rho g \zeta Q H_{net} $$
 # 
+# The **hydraulic head** is the elevation difference between the water level at the intake and the centreline elevation of the turbine, minus the losses in the pipeline due to friction.  
+# 
+# For a run-of-river hydropower project, the **flow** ($Q$) is governed by what is available in the river, minus what must be left in the river to maintain the aquatic ecosystem.  There is no storage, so the run-of-river plant can't be turned up or down to maximize revenue when demand (and thus price) is greatest.  On the other hand, the sediment that helps support the aquatic ecosystem in the diversion reach is not impeded in the same way as in a storage reservoir project.
+# 
+# The electro-mechanical efficiency is the friction loss in the conversion of rotational energy of the turbine runner to the movement of electric charges.  The total electro-mechanical efficiency is roughly 80-85% for a Pelton-type turbine-generator assembly.
 
-# ## The Growth Model
+# ## Example Calculation
 # 
-# >"The total number of bits of information accumulated on the planet after $n$ years of $f\%$ growth:"
-# 
-# $$N_{bits}(n) = \frac{N_b}{f} \cdot \left( \left( f + 1  \right)^{n+1} -1 \right)$$
+# First, let's take a look at an example calculation of power and energy. 
 
 # In[1]:
 
 
-import numpy as np
-import matplotlib.pyplot as plt
+# assign constant variables
+em_efficiency = 0.8 # dimensionless coefficient
+density_water = 999 # kg/m^3
+g = 9.81 # gravity, m/s^2
 
+
+# In a hydropower resource assessment, a project location of interest is assessed for many important characteristics, including:
+# 
+# * amount and timing of flow
+# * topology (slopes, waterfalls, etc.)
+# * sensitive ecosystems (ungulate wintering ranges, horned owl habitat, salmon spawning habitat, etc.)
+# * cultural valued components (sites of historical and cultural importance for First Nations)
+# 
+# The first two characteristics need to be characterized to determine how much power and energy can be generated.  The third and fourth can determine if an area is not suitable for development of a hydropower project.  
+# 
+# Returning to the power calculation: assume we are asked to assess a location for hydropower potential.  
+# 
+# 1. The most cursory estimate of where we could build an intake and powerhouse yields an **elevation difference of 100m**.
+# 2. A nearby river has been monitored for several decades by the [Water Survey of Canada](https://www.canada.ca/en/environment-climate-change/services/water-overview/quantity/monitoring/survey.html), and the most cursory calculation shows that on a **unit area** basis, the nearby catchment generates $75 \frac{L}{s \cdot km^2}$ on an average annual basis.
+# 4. The **catchment area** at our first-guess intake location is $50 km^2$.
+# 5. Set an initial target of 5% hydraulic losses
 
 # In[2]:
 
 
-def bits_estimation(n, f=0.01, N_b=7.3E21):
-    """
-    Total number of bits of information accumulated on the planet after n years of f% growth.
-    
-    n   = number of years elapsed 
-    f   = rate of growth of digital bit production (%, 0 --> 1)
-    N_b = estimated current annual rate of digital bit production (7.3 x 10^21)
-    
-    Returns: annual information production as a bitrate, expressed as log10(bits/year)
-    """
-    try:
-        bits = (N_b/f) * ((f + 1)**(n + 1) - 1)
-        return np.log10(bits)
-    except OverflowError as e:
-        return np.nan
+drainage_area = 50 # drainage area, km^2
+unit_runoff = 75 # L/s/km^2
+gross_head = 100 # 100 m elevation gain
 
+# calculate net head
+hydraulic_loss = 0.05  # 5% hydraulic losses
+H_net = gross_head - hydraulic_loss * gross_head
+
+
+# Using the mean runoff from the nearby catchment, combined with an estimate of the drainage area **defined by our intake location**, we can make a first approximation of a mean annual discharge (MAD) for our project intake.  We can use this MAD as a first approximation for a design flow $Q$ for our hydro project.
+# 
+# First, we need to conver the unit area runoff $\frac{L}{s \cdot km^2}$ to volumetric flow $\frac{m^3}{s}$.
+# 
+# $$UR \left[ \frac{L}{s \cdot km^2} \right] \times A_{basin} [km^2] \div 1000 \left[ \frac{L}{m^3} \right] $$
+# 
+# Yields $\frac{m^3}{s}$
 
 # In[3]:
 
 
-years = list(range(1,10001))
-growth_rates = [0.01, 0.05, 0.2, 0.5]
+q_design = unit_runoff * drainage_area / 1000
+q_design
 
+
+# Using the formula from above, calculate power.  *Always check units!!*
+# 
+# $$P = \rho g \zeta Q H_{net} $$
+# 
+# $$ = \left[ \frac{kg}{m^3} \right] \times \left[ \frac{m}{s^2} \right] \times [-] \times \left[ \frac{m^3}{s} \right] \times [ {m}]$$
+# 
+# Recall that the unit of force, the Newton $1 N = \left[ \frac{kg \cdot m}{s^2} \right] $.  Substituting into the above equation:
+# 
+# $$ = \left[ \frac{N}{m^3} \right] \times \left[ \frac{m^3}{s} \right] \times [ {m}]$$
+# 
+# Cancelling the volume $m^3$,
+# 
+# $$ = \left[ \frac{N\cdot m}{s} \right] $$
+# 
+# Recall that **work** (energy) is defined as a force applied over some distance ($W = F\times d$ expressed in units of Joules ($J$)), and Power is the rate of work per unit time ($\frac{J}{s}$), expressed in Watts ($1 \frac{J}{s} =  1 W$).  
+# 
+# So given the units our density, flow, head, etc. parameters are expressed in, the result will be Watts.
+# 
+# Also recall the following prefixes and their meanings:
+# 
+# | Prefix | Numeric Value | Power Unit |
+# |---|---|---|
+# | *kilo* | 1000 ($10^3$) | **kilo**Watt (kW) |
+# | *mega* | 1,000,000 ($10^6$) | **mega**Watt (MW) |
+# | *giga* | $10^9$ | **giga**Watt (GW) |
+# | *tera* | $10^12$ | **tera**Watt (TW) |
+# 
+# 
 
 # In[4]:
 
 
-fig, ax = plt.subplots(1, 1, figsize=(8, 6))
-# evaluate a range of digital content growth rates
-for f in growth_rates:
-    bits = [bits_estimation(y, f) for y in years]
-    ax.plot(years, bits, label=f'{100*f:.0f}%')
+# Calculate Power
 
-ax.set_title('Model of Digital Content Production Growth')
-ax.set_xscale('log',base=10) 
-ax.set_ylabel('Annual Info. Production [log10(bits)]')
-ax.set_xlabel('Years from Present (log10 scale)')
-ax.set_ylim(20, 35)
-ax.legend()
-plt.show()  
+P = em_efficiency * density_water * g * q_design * H_net
+# convert to MegaWatts
+P_MW = P / 1E6
+print(f'The estimated power is {P_MW:.1f} MW.')
 
 
-# ## The Energy Model
+# ## Estimate Energy
 # 
-# >"The total energy necessary to create all the digital information in a given n-th year, assuming $f\%$ year-on-year growth."
+# Given we've made a first approximation of power for our hypothetical hydro project, let's now make (an equally rough) estimate of how much energy we can make per year based on our design flow.  Let's use the term **Mean Annual Energy (MAE)** to describe how much energy what we might expect in an average year.  Above, we used the unit of work in Joules in deriving power, but in the energy industry, electric energy is typically expressed in **Watt hours** ($Wh$).
 # 
-# $$Q_{info}(n^{th}) = N_b \cdot k_B T \cdot ln(2) \cdot (f + 1)^n$$
+# $$MAE = P \times t$$
 
 # In[5]:
 
 
-def power_requirement(n, f=0.01, N_b=7.3E21, T=300):
-    """
-    The total energy necessary to create all the digital information in a given n-th year, 
-    assuming 𝑓% year-on-year growth.
-    
-    n   = nth year from current year
-    f   = rate of growth of digital bit production (%, 0 --> 1)
-    N_b = estimated current annual rate of digital bit production (7.3 x 10^21)
-    k_B = Boltzmann constant (1.38064852 × 10-23 m2 kg s-2 K-1)
-    T = temperature at which information is stored (assumed to be 300K in the study)
-    """
-    k_B = 1.38064852E-23 
-    annual_seconds = 3.154E7   # number of seconds in a year
-    
-    try:
-        energy = N_b * k_B * T * np.log(2) * (f + 1)**(n)
-        return np.log10(energy / annual_seconds)
-    except OverflowError as e:
-        return np.nan
-        
+# calculate hours in a year
+t = 24 * 365
+mae_MWh = P_MW * t
+
+# convert MWh to GWh to make the number consistent with how it's expressed in industry
+mae_GWh = mae_MWh / 1E3
+print(f'The estimated annual energy is {mae_GWh:.0f} GWh.')
 
 
-# ## The Information Mass Model
+# ## Improving the Estimate
 # 
-# >"The total information mass accumulated on the planet after $n$ years of $f\%$ growth."
+# In the example above, we've made a very rough estimate of power and energy.  
 # 
-# $$M_{info}(n) = N_b \cdot \frac{k_B T \cdot ln(2)}{f\cdot c^2} \cdot \left((f + 1)^{n+1} -1 \right)$$
-
-# In[6]:
-
-
-def mass_energy_equivalent(n, f=0.01, N_b=7.3E21, T=300):
-    """
-    The growth rate of 'rest mass' corresponding to information production.
-    
-    n   = nth year from current year
-    f   = rate of growth of digital bit production (%, 0 --> 1)
-    N_b = estimated current annual rate of digital bit production (7.3 x 10^21)
-    k_B = Boltzmann constant (1.38064852 × 10-23 m^2 kg s^-2 K^-1)
-    T = temperature at which information is stored (assumed to be 300K in the study)
-    c = speed of light 3.0 x 10^8 [m/s]
-    """
-    k_B = 1.38064852E-23     
-    c = 3.0E8                
-    
-    try: 
-        # [kg] mass of a digital bit of information at room temperature
-        m_bit = k_B * T * np.log(2) / c**2       
-        info_mass = N_b * (m_bit / f) * ((f + 1)**(n+1) - 1)    
-        return np.log10(info_mass)
-    except OverflowError:
-        return np.nan   
-
-
-# In[7]:
-
-
-# evaluate a range of mass-energy equivalent growth rates
-fig, ax = plt.subplots(1, 2, figsize=(16, 6))
-
-# plot the total current power use on earth
-p_earth = np.log10(18.5E12) 
-ax[0].plot(years, [p_earth for y in years], label='Earth Power', linestyle='dashed')
-
-# plot the earth's mass [log10(kg)]
-m_earth = np.log10(6E24) 
-ax[1].plot(years, [m_earth for y in years], label='Earth Mass', linestyle='dashed')
-
-# plot the power requirement for the range of growth rates
-# and the information mass for the range of growth rates
-for f in growth_rates:
-    bits = [mass_energy_equivalent(y, f) for y in years]
-    power = [power_requirement(y, f) for y in years]
-    
-    ax[0].plot(years, bits, label=f'{100*f:.0f}%')
-    ax[1].plot(years, bits, label=f'{100*f:.0f}%')
-
-ax[0].set_title('Power Requirement of Digital Bit Production')
-ax[0].set_xscale('log',base=10) 
-ax[0].set_ylabel('log10(Power [W])')
-ax[0].set_xlabel('Years from Present [log10 scale]')
-ax[0].set_ylim(-20, 35)
-ax[0].legend()
-
-ax[1].set_title('Information Mass of Digital Bit Production')
-ax[1].set_xscale('log',base=10) 
-ax[1].set_ylabel('log10(mass [kg])')
-ax[1].set_xlabel('Years from Present [log10 scale]')
-ax[1].set_ylim(-20, 35)
-ax[1].legend()
-plt.show()  
-
-
-# ## Questions
-# 
-# 1. How does information mass relate to hardware mass? 
-#     * if information mass is a small fraction of the mass of a high density storage device, would storage devices reach earth-mass long before information does?
-# 2. How do we think about the critical path to growth?
-#     * when does adding $f\%$ of electrical capacity each year **in absolute terms** become too large?  Is it possible adding the capacity would be a limiting factor before the total exploitable energy could be a factor?
-#     * same question but for area -- what year would we have to bulldoze an entire continent just to yield the annual marginal DCP? 
-# 3. What problems would computers generating earth-scale information mass be working on?
-#     * lots of problems still not solvable with hypothetical computational power
-#     * something as simple as chess is still hard. [Shannon Number](https://en.wikipedia.org/wiki/Shannon_number): conservative estimate of the game-tree complexity is $10^{120}$
-# 4. What other limits related to computation might come first?
-#     * input data? i.e. many problems are already data sparse
-#     * sensing resolution 
-#     * data transmission?
-#     * computation time? 
-
-# ## How does the Area Requirement Grow under current and theoretical limit memory density?
-# 
-# How can the height dimension be estimated?  $25 nm^2$
-
-# In[8]:
-
-
-from matplotlib import cm
-from matplotlib.colors import ListedColormap
-
-viridis = cm.get_cmap('viridis', len(growth_rates))
-cmap = viridis(np.linspace(0, 1, len(growth_rates)))[::-1]
-
-
-# In[9]:
-
-
-def area_estimation(n, f=0.01, N_b=7.3E21, unit_area=25E-9, height_approx=10):
-    """
-    Approximate space required to store bits of information accumulated on the planet after n years of f% growth.
-    
-    n   = number of years elapsed 
-    f   = rate of growth of digital bit production (%, 0 --> 1)
-    N_b = estimated current annual rate of digital bit production (7.3 x 10^21)
-    unit_area = approximate memory (linear) density (m/bit)
-    height_approx = how high is the memory structure, assuming linear density equals unit_area
-    
-    Returns: area taken up by all bits, in km^2
-    """
-    try:
-        bits = (N_b/f) * ((f + 1)**(n + 1) - 1)
-        # approximate the area of a 100m tall memory device
-        return np.log10(bits * unit_area * unit_area / (height_approx / 1000))
-    except OverflowError as e:
-        return np.nan
-
-
-# In[10]:
-
-
-A_ocean = 0.7 * 362E6  # [km^2] 70% of the ocean floor is the abyssal plains, ocean is 70% of surface of earth (362 million km^2),
-A_CA = 10E6  # area of Canada, km^2
-A_nd = 41.5E3 # area of the Netherlands, km^2
-
-# memory density inputs
-A_bit = 25E-9 / 1E6    # 25  nm^2 to km^2 size of 1 bit at current storage density
-A_atom = 1E-10 / 1E6   # 0.1 nm^2 to km^2 (some atoms not spherical)
-
-# plot area growth
-fig, ax = plt.subplots(1, 1, figsize=(12, 7))
-# evaluate a range of digital content growth rates
-i = 0
-for f in growth_rates:
-    
-    # assume a 100m high memory structure monolith
-    h_memory = 100
-    current_area = [area_estimation(y, f, unit_area=A_bit, height_approx=h_memory) for y in years]
-    limit_area = [area_estimation(y, f, unit_area=A_atom, height_approx=h_memory) for y in years]
-    
-    ax.plot(years, current_area, label=f'{100*f:.0f}% current', 
-            color=cmap[i], linestyle='solid')
-#     ax.plot(years, limit_area, label=f'{100*f:.0f}% limit', 
-#             color=cmap[i], linestyle='dashed')
-    i += 1
-
-# plot the area of the abyssal plains of the ocean floor
-# ax.plot(years, [np.log10(A_nd) for y in years], label='Nederland', linestyle='dotted')
-# ax.plot(years, [np.log10(A_CA) for y in years], label='Canada', linestyle='dotted')
-# ax.plot(years, [np.log10(A_ocean) for y in years], label='Ocean floor', linestyle='dotted')
-
-
-ax.set_title('Model of Area Required for Digital Content Production Growth')
-ax.set_xscale('log',base=10) 
-ax.set_ylabel('log10(Area [km^2])')
-ax.set_xlabel('Years from Present (log10 scale)')
-ax.set_ylim(-20, 50)
-ax.legend()
-plt.show() 
-
-
-# ## References
-# 
-# 1. Vopson, Melvin M. "The Information Catastrophe." *AIP Advances*, vol. 10, no. 8, 2020, pp. 85014-085014-4.
-# 
-# 2. Ikonen, Joni, Juha Salmilehto, and Mikko Möttönen. "Energy-Efficient Quantum Computing." *Npj Quantum Information*, vol. 3, no. 1, 2017;2016;, pp. 1-7.
-
-# ## Notes from Presentation 
-# 
-# ### Historical Growth Rates
-# 
-# 1.  Growth in information production and memory density has never been linear (maybe logistic and punctuated?) for any medium from stone to papyrus to paper to transistor, but the expression of unchecked growth in digital content production (DCP) is interesting as a timer from today on technological advancement.  Had the first stone masons looked at available local quarry production and labour intensity versus growth in recorded information, how far would their information catstrophe horizon have been?  How about for the ancient egyptian scribe in terms of papyrus and ink supply and production?  Babbage and Lovelace for mechanical computation?  Turing and von Neumann and modern computation?  Vopson's use of theoretical limits of space and thermal efficiency in computation represent bounds that today don't seem achievable, and this only provides greater emphasis for the deadline that looms ahead.  A few other comparisons help put into perspective the magnitude of advance that must be realized in order to avoid displacing or otherwise disrupting ecosystems to satisfy our appetite for cat videos.  
-# 
-# 
-# ### Quantified Constraints on DCP Growth
-# 
-# 1.  Complete capture of solar energy input:
-#     * assuming albedo of 30%
-#     * $174 \space \text{PetaWatts} \times 0.7 = 1.218\times 10^{17} W$ (if all incident solar radiation were exploited)
-#         * the result of further increase would require reducing earth's albedo, which would increase temperature of earth?
-#     * Total world human energy consumption (excluding food) $= 150 \frac{\text{TWh}}{year} = 1.7 \times 10^{10} W$
-#         * factor of $~7\times 10^6$ expansion from current energy consumption
-#         
-# 2.  Energy and space overhead for computing:
-#     * how much energy is required to sense, transmit, and process one bit of information for every bit erased or written? 
-#     * how much space is required for ancillary equipment to house this immense memory?  
-#     * are these just linear factors that have no substantial impact on exponential growth?
-#     
-# 3.  Rates vs. total energy
-#     * is it possible that the marginal annual energy capacity could limit the growth before the total energy use would?
-#     * is it possible that the marginal annual "real estate" could limit the growth before the total area would? i.e. production rate of data centers?  Shortly after the *total* area required for memory centers is the size of entire countries, areas the size of increasingly large countries are added each year.  The total area of the Abyssal Plains is quite large, but even then it barely nudges the mark.
-#     *  
-#         
+# 1. What assumptions went into the parameters we used?
+# 2. What can we do to make more accurate estimates?
 
 # In[ ]:
 

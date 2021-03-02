@@ -1,15 +1,15 @@
 # Book settings
 # Learn more at https://jupyterbook.org/customize/config.html
 
-title: ITG Reading Group
-author: Dan Kovacek
+title: Introduction to Run-of-River Hydropower
+author: Dan Kovacek, P.Eng.
 email: dan@dkhydrotech.com
-logo: img/infoplosion.png
+logo: img/dkht_logo.jpg
 description: >-
-  Content for Infotheory in Geosciences Reading Group presentation on 13 January 2021.
+  Content for presentation to BCIT EENG-8435 - District Energy Systems
 
 baseurl: "content"
-url: "https://dankovacek.github.io/info_catastrophe"
+url: "https://dankovacek.github.io/run_of_river_intro"
 
 
 # Force re-execution of notebooks on each build.
@@ -27,7 +27,7 @@ latex:
 
 # Information about where the book exists on the web
 repository:
-  url: https://github.com/dankovacek/info_catastrophe  # Online location of your book
+  url: https://github.com/dankovacek/run_of_river_intro  # Online location of your book
   path_to_book: content  # Optional path to your book, relative to the repository root
   branch: main  # Which branch of the repository should be used when creating links (optional)
 
