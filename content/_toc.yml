@@ -1,5 +1,12 @@
 # Table of content
 # Learn more at https://jupyterbook.org/customize/toc.html
 #
-- file: notebooks/SiteC
-- file: notebooks/basic_power_notebook
+- file: intro
+
+- part: RoR in British Columbia
+  chapters:
+  - file: notebooks/SiteC
+
+- part: Hydropower Basics
+  chapters: 
+  - file: notebooks/basic_power_notebook

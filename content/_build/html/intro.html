@@ -57,6 +57,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Run of River vs. Storage Hydropower in BC: A Cursory Introduction" href="notebooks/SiteC.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -75,7 +76,7 @@
         <div class="navbar-brand-box">
 <a class="navbar-brand text-wrap" href="index.html">
   
-  <img src="_static/dkht_logo.jpg" class="logo" alt="logo">
+  <img src="_static/logo11.jpg" class="logo" alt="logo">
   
   
   <h1 class="site-logo" id="site-title">Introduction to Run-of-River Hydropower</h1>
@@ -87,12 +88,29 @@
 </form>
 <nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
     <ul class="nav sidenav_l1">
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="#">
+   Intro to Run-of-River Hydropower
+  </a>
+ </li>
+</ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  RoR in British Columbia
+ </span>
+</p>
+<ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="notebooks/SiteC.html">
    Run of River vs. Storage Hydropower in BC: A Cursory Introduction
   </a>
  </li>
 </ul>
+<p class="caption collapsible-parent">
+ <span class="caption-text">
+  Hydropower Basics
+ </span>
+</p>
 <ul class="nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="notebooks/basic_power_notebook.html">
@@ -190,6 +208,20 @@
    Preamble
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#topics-covered">
+   Topics Covered
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#thursday-march-25th">
+     Thursday, March 25th
+    </a>
+    <ul class="nav section-nav flex-column">
+    </ul>
+   </li>
+  </ul>
+ </li>
 </ul>
 
         </nav>
@@ -205,20 +237,69 @@
 <h1>Intro to Run-of-River Hydropower<a class="headerlink" href="#intro-to-run-of-river-hydropower" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="preamble">
 <h2>Preamble<a class="headerlink" href="#preamble" title="Permalink to this headline">¶</a></h2>
-<p>In 2016 I began teaching <em>EENG 8222: Run-of-River Hydropower</em> at BCIT.  The first year I taught, I asked students what they liked and disliked about their courses.  The response was unanimous—students wanted to work on problems that resemble the problems people work on in industry, using the same tools as used in indusutry.  <s>So we spent 12 weeks learning how to format datetime columns in Microsoft Excel.</s>  In response, I set out to create a series of tasks adapted from my work experience in identifying hydropower resources in various places around the world.</p>
+<p>In 2016 I began teaching <em>EENG 8222: Run-of-River Hydropower</em> at BCIT.  Each year I asked students for feedback on the course, and what they find most engaging about their other courses.  The response is generally that students want to work on problems that resemble the day-to-day processes and problems common in industry.  <s>So we spent 12 weeks learning how to format datetime columns in Microsoft Excel.</s>  In response, I set out to create a series of tasks adapted from my work experience in identifying hydropower resources in various places around the world.</p>
 <div class="figure align-default" id="sierra-leone-hydropower">
 <a class="reference internal image-reference" href="_images/sierra_leone.JPG"><img alt="_images/sierra_leone.JPG" src="_images/sierra_leone.JPG" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-text">Hydropower Resource Study in Sierra Leone, 2010.</span><a class="headerlink" href="#sierra-leone-hydropower" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Hydropower Resource Study in Sierra Leone, 2010.</span><a class="headerlink" href="#sierra-leone-hydropower" title="Permalink to this image">¶</a></p>
 </div>
 <p>Since this topic will be presented online in just two sessions, I’ve adapted a few exercises from my EENG 8222 curriculum to incorporate more interactivity.  I know some students are working full time, so spending your limited free time watching video lectures is really tough.  I know this because I’m also currently a student.</p>
-<p><a class="reference external" href="https://jupyter.org/">Jupyter Notebook.</a></p>
-<p>In my class, small teams of students develop a proposal for a run-of-river hydropower project.  The proposal is built progressively throughout the term as we cover the material.  The aim of the two sessions I’m with you is to condense the hands-on parts of the course</p>
-<p>There are many communities around BC that are not grid connected, typically relying on diesel fuel for electricity supply.</p>
-<p>Important!  We had a private landowner a few years ago approach the class with an information package about his property.  He wanted to develop a micro hydro project on the small creek that ran through his private land.  One group of students took up the challenge to estimate the resource potential, and made a valiant effort.  The owner wasn’t happy because we didn’t give him the answer he was looking for, <strong>which is a more important result than giving into the temptation to find some perspective that will yield a favourable result</strong>.</p>
-<p>This presentation uses the <a class="reference external" href="https://jupyterbook.org/intro.html">Jupyter Book</a> format, which is not widely used in industry, but is being adopted widely in academia.  Jupyter Book is basically a way to bring together a bunch of interactive documents with slick formatting.  A calculation file that doubles as a report, where anyone can step into your calculation to check your work or build off an idea.  Below is an example of the type of interactivity that I believe reports can greatly benefit from.  In the subsequent discussion about the hydropower industry in BC, a common criticism is in the use of source information and methodology, and the lack of disclosure of both.  Transparency requires access to information, and Jupyter Book greatly reduces the technological barriers to doing so.</p>
+</div>
+<div class="section" id="topics-covered">
+<h2>Topics Covered<a class="headerlink" href="#topics-covered" title="Permalink to this headline">¶</a></h2>
+<p>There are many communities around BC that are not grid connected, typically relying on diesel fuel for electricity supply.  In EENG 8222, small teams of students develop a proposal for a run-of-river hydropower project.  The proposal is built progressively throughout the term as we cover the material.  The aim for the two sessions we have together is to develop some intuition for how much energy can be extracted from a creek, and put this into context of how much energy we actually consume.</p>
+<div class="section" id="thursday-march-25th">
+<h3>Thursday, March 25th<a class="headerlink" href="#thursday-march-25th" title="Permalink to this headline">¶</a></h3>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Time</p></th>
+<th class="head"><p>Duration</p></th>
+<th class="head"><p>Topic</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>2:30</p></td>
+<td><p>10 min</p></td>
+<td><p>Introductions</p></td>
+</tr>
+<tr class="row-odd"><td><p>2:40</p></td>
+<td><p>50 min</p></td>
+<td><p>Hydropower in Context of Global, Regional, Local Supply and Demand</p></td>
+</tr>
+<tr class="row-even"><td><p>3:30</p></td>
+<td><p>10 min</p></td>
+<td><p>break</p></td>
+</tr>
+<tr class="row-odd"><td><p>3:40</p></td>
+<td><p>30 min</p></td>
+<td><p>Current State of Hydropower In BC: Reading &amp; Discussion</p></td>
+</tr>
+<tr class="row-even"><td><p>4:10</p></td>
+<td><p>15 min</p></td>
+<td><p>Anatomy of a run-of-river project</p></td>
+</tr>
+<tr class="row-odd"><td><p>4:25</p></td>
+<td><p>10 min</p></td>
+<td><p>break</p></td>
+</tr>
+<tr class="row-even"><td><p>4:35</p></td>
+<td><p>30 min</p></td>
+<td><p>Hydropower Fundamentals: The Power Equation (Excel exercise)</p></td>
+</tr>
+<tr class="row-odd"><td><p>5:05</p></td>
+<td><p>25 min</p></td>
+<td><p>Modern Data Analysis Tools (Jupyter Notebook)</p></td>
+</tr>
+</tbody>
+</table>
+<p>This presentation uses the <a class="reference external" href="https://jupyterbook.org/intro.html">Jupyter Book</a> format, which is not widely used in industry, but is being adopted widely in academia.  Jupyter Book is the combination of an interactive programming environment with a calculation file (<em>“calc file”</em> or <em>“work file”</em>) that can double as a report.  Work files or calc files are the records that engineers are required to keep as proof of their work.  An interactive work file can let a reviewer not only see the assumptions, but step into the calculation and test sensitivity, and build on ideas.  Below is an example of the type of interactivity that I believe reports can greatly benefit from.  In the discussion about the hydropower in BC, a criticism of the industry is the lack of information available to compare the condition of the aquatic ecosystem pre- and post-project.  Jupyter Book reduces the technological barriers to sharing information with a high level of transparency, but it does require some programming skills.</p>
 <div class="figure align-default" id="interactive-app">
 <a class="reference internal image-reference" href="_images/interactive_app.gif"><img alt="_images/interactive_app.gif" src="_images/interactive_app.gif" style="width: 800px;" /></a>
-<p class="caption"><span class="caption-text">Interactive application exploring water level at two locations on the same river.</span><a class="headerlink" href="#interactive-app" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Interactive application exploring water level at two locations on the same river.</span><a class="headerlink" href="#interactive-app" title="Permalink to this image">¶</a></p>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
 </div>
 </div>
 </div>
@@ -251,6 +332,7 @@
     
     <div class='prev-next-bottom'>
         
+    <a class='right-next' id="next-link" href="notebooks/SiteC.html" title="next page">Run of River vs. Storage Hydropower in BC: A Cursory Introduction</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">

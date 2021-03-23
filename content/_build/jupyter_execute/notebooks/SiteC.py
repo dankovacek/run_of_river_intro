@@ -167,13 +167,3 @@ print(f'The present value *construction* cost of {siteC_annual_energy/1E3:.0f} G
 
 
 
-
-# 
-# ```{toctree}
-# :hidden:
-# :titlesonly:
-# 
-# 
-# basic_power_notebook
-# ```
-# 
