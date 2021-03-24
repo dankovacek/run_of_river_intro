@@ -12,11 +12,21 @@ name: Sierra Leone Hydropower
 Hydropower Resource Study in Sierra Leone, 2010.  
 ```
 
-Since this topic will be presented online in just two sessions, I've adapted a few exercises from my EENG 8222 curriculum to incorporate more interactivity.  I know some students are working full time, so spending your limited free time watching video lectures is really tough.  I know this because I'm also currently a student. 
+Since this topic will be presented online in just two sessions, I've adapted a few exercises from my EENG 8222 curriculum to try making this interactive.  I know some students are working full time, and screen exhaustion is real.  I'm also currently a student, so I know my limits for watching online lectures.  Your feedback is welcome, and your participation is encouraged! 
 
 ## Topics Covered
 
-There are many communities around BC that are not grid connected, typically relying on diesel fuel for electricity supply.  In EENG 8222, small teams of students develop a proposal for a run-of-river hydropower project.  The proposal is built progressively throughout the term as we cover the material.  The aim for the two sessions we have together is to develop some intuition for how much energy can be extracted from a creek, and put this into context of how much energy we actually consume.  
+There are many communities around BC that are not connected to the grid, instead relying on diesel fuel for electricity supply.  [Click here](https://www.bchydro.com/content/dam/BCHydro/customer-portal/documents/corporate/suppliers/transmission-system/maps/transplt-Default-0001.pdf) for a high-resolution pdf of the figure below. 
+
+```{figure} img/bc_transmission.jpg
+---
+width: 800px
+name: BC HydroTransmission Infrastructure in BC
+---
+BC Hydro Electricity Transmission Infrastructure
+```
+
+In EENG 8222, small teams of students develop a proposal for a run-of-river hydropower project.  The proposal is built progressively throughout the term as we cover the material.  The aim for the two sessions we have together is to develop some intuition for how much energy can be extracted from a creek, and put this into context of how much energy we actually consume.  
 
 ### Thursday, March 25th
 
