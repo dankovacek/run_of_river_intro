@@ -12,7 +12,7 @@ name: Sierra Leone Hydropower
 Hydropower Resource Study in Sierra Leone, 2010.  
 ```
 
-There's too much to cover in two sessions, so rather than risk information overload and monotony I've picked a few exercises from my EENG 8222 curriculum to try and incorporate activities and interaction.  Your feedback is welcome, and participation is encouraged!  
+There's too much to cover in two sessions, so I've picked a few exercises from my EENG 8222 curriculum to try and incorporate some activities and interaction.  Your feedback is welcome, and participation is encouraged!  
 
 ## Topics Covered
 
