@@ -43,7 +43,7 @@ name: BC HydroTransmission Infrastructure in BC
 BC Hydro Electricity Transmission Infrastructure
 ```
 
-Project proponents are encouraged to engage with First Nations early in the planning stage, and the Province of BC is legally oblicaed to consult and accomodate First Nations.  [Inter-Agency Guidebook for Project Development](https://www2.gov.bc.ca/assets/gov/farming-natural-resources-and-industry/natural-resource-use/land-water-use/crown-land/land-use-plans-and-objectives/natural-resource-major-projects/major-projects-office/guidebooks/clean-energy-projects/clean_energy_guidebook.pdf) from the Government of BC.
+Project proponents are encouraged to engage with First Nations early in the planning stage, and the Province of BC is legally oblicaed to consult and accomodate First Nations.  Guidelines on the planning and development phases are presented in the [Inter-Agency Guidebook for Project Development](https://www2.gov.bc.ca/assets/gov/farming-natural-resources-and-industry/natural-resource-use/land-water-use/crown-land/land-use-plans-and-objectives/natural-resource-major-projects/major-projects-office/guidebooks/clean-energy-projects/clean_energy_guidebook.pdf) from the Government of BC.
 
 ```{figure} img/fn_names.jpg
 ---
