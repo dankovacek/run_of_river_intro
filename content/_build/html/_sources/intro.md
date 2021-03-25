@@ -2,7 +2,7 @@
 
 ## Preamble
 
-In 2016 I began teaching *EENG 8222: Run-of-River Hydropower* at BCIT.  Each year I asked students for feedback on the course, and what they find most engaging about their other courses.  The response is generally that students want to work on problems that resemble the day-to-day processes and problems common in industry.  <s>So we spent 12 weeks learning how to format datetime columns in Microsoft Excel.</s>  In response, I set out to create a series of tasks adapted from my work experience in identifying hydropower resources in various places around the world.  
+In 2016 I began teaching *EENG 8222: Run-of-River Hydropower* at BCIT.  Each year I asked students for feedback on the course, and what they find most engaging about their other courses.  The response is generally that students want to work on problems that resemble the day-to-day processes and problems common in industry.  <s>So we spent 12 weeks learning how to format datetime columns in Microsoft Excel.</s>  In response, I set out to create a series of modules adapted from my fourteen years of professional experience in the hydropower industry.  
 
 ```{figure} img/sierra_leone.JPG
 ---
@@ -12,11 +12,28 @@ name: Sierra Leone Hydropower
 Hydropower Resource Study in Sierra Leone, 2010.  
 ```
 
-Since this topic will be presented online in just two sessions, I've adapted a few exercises from my EENG 8222 curriculum to try making this interactive.  I know some students are working full time, and screen exhaustion is real.  I'm also currently a student, so I know my limits for watching online lectures.  Your feedback is welcome, and your participation is encouraged! 
+There's too much to cover in two sessions, so rather than risk information overload and monotony I've picked a few exercises from my EENG 8222 curriculum to try and incorporate activities and interaction.  Your feedback is welcome, and participation is encouraged!  
 
 ## Topics Covered
 
-There are many communities around BC that are not connected to the grid, instead relying on diesel fuel for electricity supply.  [Click here](https://www.bchydro.com/content/dam/BCHydro/customer-portal/documents/corporate/suppliers/transmission-system/maps/transplt-Default-0001.pdf) for a high-resolution pdf of the figure below. 
+### Outline for Thursday, March 25th
+
+| Time | Duration | Topic |
+|---|---|---|
+| 2:30 | 10 min | Introductions |
+| 2:40 | 15 min | Anatomy of a Run-of-River Facility |
+| 2:55 | 35 min | Hydropower in Context of Global Energy Supply and Demand |
+| 3:30 | 10 min | break |
+| 3:40 | 30 min | Regional, & Local Hydropower Context: Canada & BC |
+| 4:10 | 20 min | Hydropower Fundamentals: The Power Equation (Excel exercise) |
+| 4:30 | 20 min | Modern Tools for Data Analysis (Jupyter Notebook intro.) |
+| 4:50 | 10 min | break |
+| 5:00 | 30 min | Current State of Hydropower In BC: Reading & Discussion |
+
+
+### Water to Wire
+
+There are many communities around BC that are not connected to the grid, instead relying on diesel fuel for electricity supply.  [Click here](https://www.bchydro.com/content/dam/BCHydro/customer-portal/documents/corporate/suppliers/transmission-system/maps/transplt-Default-0001.pdf) for a high-resolution pdf of the figure below.
 
 ```{figure} img/bc_transmission.jpg
 ---
@@ -26,21 +43,30 @@ name: BC HydroTransmission Infrastructure in BC
 BC Hydro Electricity Transmission Infrastructure
 ```
 
-In EENG 8222, small teams of students develop a proposal for a run-of-river hydropower project.  The proposal is built progressively throughout the term as we cover the material.  The aim for the two sessions we have together is to develop some intuition for how much energy can be extracted from a creek, and put this into context of how much energy we actually consume.  
+Project proponents are encouraged to engage with First Nations early in the planning stage, and the Province of BC is legally oblicaed to consult and accomodate First Nations.  [Inter-Agency Guidebook for Project Development](https://www2.gov.bc.ca/assets/gov/farming-natural-resources-and-industry/natural-resource-use/land-water-use/crown-land/land-use-plans-and-objectives/natural-resource-major-projects/major-projects-office/guidebooks/clean-energy-projects/clean_energy_guidebook.pdf) from the Government of BC.
 
-### Thursday, March 25th
+```{figure} img/fn_names.jpg
+---
+width: 800px
+name: Map of First Nations Territories
+---
+Map of First Nations Territories
+```
 
-| Time | Duration | Topic |
-|---|---|---|
-| 2:30 | 10 min | Introductions |
-| 2:40 | 50 min | Hydropower in Context of Global, Regional, Local Supply and Demand |
-| 3:30 | 10 min | break |
-| 3:40 | 30 min | Current State of Hydropower In BC: Reading & Discussion |
-| 4:10 | 15 min | Anatomy of a run-of-river project |
-| 4:25 | 10 min | break |
-| 4:35 | 30 min | Hydropower Fundamentals: The Power Equation (Excel exercise) |
-| 5:05 | 25 min | Modern Data Analysis Tools (Jupyter Notebook) |
+### Questions
 
+1. How many factors can you identify that affect whether a river or creek is a potential candidate for a hydropower facility?
+2. Considering **regional variability in climate**, can you identify locations (black diamonds on the map above) where small hydro would be more viable?
+
+The aim for these two sessions is to develop some intuition for how much energy can be extracted from a creek, and put this into context of how much energy we produce from other sources and how much we consume.  Hydropower is no magic bullet, but it has been vital to Canada for nearly a century.
+
+### Additional Resources
+
+#### Global Energy Balance
+
+In today's presentation, we use a rough estimate of the amount of energy coming from the sun to earth, or the incident solar radiation.  For a much more detailed explanation of earth's energy balance, see the [NASA Earth Observatory](https://earthobservatory.nasa.gov/features/EnergyBalance).  For a more rigorous estimate of energy demand growth and energy generation potential, see this report from the [Sandia National Laboratory.](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&ved=2ahUKEwiAwbbV5crvAhXIFjQIHTB1CFMQFjAEegQIGxAD&url=https%3A%2F%2Fwww.sandia.gov%2F~jytsao%2FSolar%2520FAQs.pdf&usg=AOvVaw2sjwL2LNsOKAq86W0B3cO8)
+
+### Current Data Analysis Tools
 
 This presentation uses the [Jupyter Book](https://jupyterbook.org/intro.html) format, which is not widely used in industry, but is being adopted widely in academia.  Jupyter Book is the combination of an interactive programming environment with a calculation file (*"calc file"* or *"work file"*) that can double as a report.  Work files or calc files are the records that engineers are required to keep as proof of their work.  An interactive work file can let a reviewer not only see the assumptions, but step into the calculation and test sensitivity, and build on ideas.  Below is an example of the type of interactivity that I believe reports can greatly benefit from.  In the discussion about the hydropower in BC, a criticism of the industry is the lack of information available to compare the condition of the aquatic ecosystem pre- and post-project.  Jupyter Book reduces the technological barriers to sharing information with a high level of transparency, but it does require some programming skills.
 
