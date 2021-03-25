@@ -3,10 +3,11 @@
 #
 - file: intro
 
+- part: Hydropower Basics
+  chapters: 
+  - file: notebooks/basic_power_notebook
+
 - part: RoR in British Columbia
   chapters:
   - file: notebooks/SiteC
 
-- part: Hydropower Basics
-  chapters: 
-  - file: notebooks/basic_power_notebook
