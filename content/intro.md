@@ -20,7 +20,7 @@ There's too much to cover in two sessions, so I've picked a few exercises from m
 
 | Time | Duration | Topic |
 |---|---|---|
-| 2:30 | 10 min | Introductions |
+| 2:30 | 10 min | Introduction, Overview |
 | 2:40 | 15 min | Anatomy of a Run-of-River Facility |
 | 2:55 | 35 min | Hydropower in Context of Global Energy Supply and Demand |
 | 3:30 | 10 min | break |
@@ -50,7 +50,7 @@ Project proponents are encouraged to engage with First Nations early in the plan
 width: 800px
 name: Map of First Nations Territories
 ---
-[Map of First Nations Territories](https://indigenouspeoplesresources.com/products/canada-first-nations-peoples-of-british-columbia-map)
+Map of First Nations Territories [(source)](https://indigenouspeoplesresources.com/products/canada-first-nations-peoples-of-british-columbia-map)
 ```
 
 ### Questions
