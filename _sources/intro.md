@@ -50,7 +50,7 @@ Project proponents are encouraged to engage with First Nations early in the plan
 width: 800px
 name: Map of First Nations Territories
 ---
-Map of First Nations Territories
+[Map of First Nations Territories](https://indigenouspeoplesresources.com/products/canada-first-nations-peoples-of-british-columbia-map)
 ```
 
 ### Questions
