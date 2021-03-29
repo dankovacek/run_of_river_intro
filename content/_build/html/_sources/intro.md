@@ -24,12 +24,23 @@ There's too much to cover in two sessions, so I've picked a few exercises from m
 | 2:40 | 15 min | Anatomy of a Run-of-River Facility |
 | 2:55 | 35 min | Hydropower in Context of Global Energy Supply and Demand |
 | 3:30 | 10 min | break |
-| 3:40 | 30 min | Regional, & Local Hydropower Context: Canada & BC |
-| 4:10 | 20 min | Hydropower Fundamentals: The Power Equation (Excel exercise) |
-| 4:30 | 20 min | Modern Tools for Data Analysis (Jupyter Notebook intro.) |
+| 3:40 | 30 min | Energy Problems: Thought Experiment in Exponential Growth |
+| 4:10 | 30 min | Regional, & Local Hydropower Context: Canada & BC |
+| 4:40 | 10 min | break |
+| 4:50 | 40 min | Hydropower Fundamentals: Problem Set (Excel Exercise) |
+
+### Outline for Thursday, April 1st
+
+| Time | Duration | Topic |
+|---|---|---|
+| 2:30 | 10 min | Introduction, Overview |
+| 2:40 | 30 min | Hydropower Resource Assessment |
+| 3:10 | 20 min | Resource ID Exercise: Google Earth |
+| 3:30 | 10 min | break |
+| 3:40 | 35 min | Hydropower Fundamentals: Power and Energy from Streamflow (Excel Exercise) |
+| 4:15 | 20 min | Modern Tools for Data Analysis (Jupyter Notebook intro.) |
 | 4:50 | 10 min | break |
 | 5:00 | 30 min | Current State of Hydropower In BC: Reading & Discussion |
-
 
 ### Water to Wire
 
