@@ -38,9 +38,9 @@ There's too much to cover in two sessions, so I've picked a few exercises from m
 | 3:10 | 20 min | Resource ID Exercise: Google Earth |
 | 3:30 | 10 min | break |
 | 3:40 | 35 min | Hydropower Fundamentals: Power and Energy from Streamflow (Excel Exercise) |
-| 4:15 | 20 min | Modern Tools for Data Analysis (Jupyter Notebook intro.) |
-| 4:50 | 10 min | break |
-| 5:00 | 30 min | Current State of Hydropower In BC: Reading & Discussion |
+| 4:15 | 25 min | Modern Tools for Data Analysis (Jupyter Notebook intro.) |
+| 4:40 | 10 min | break |
+| 4:50 | 30 min | Current State of Hydropower In BC: Reading & Discussion |
 
 ### Water to Wire
 
