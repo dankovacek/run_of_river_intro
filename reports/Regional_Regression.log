@@ -1,0 +1,46 @@
+Traceback (most recent call last):
+  File "/home/danbot/Documents/code/data_analysis/lib/python3.8/site-packages/jupyter_cache/executors/utils.py", line 51, in single_nb_execution
+    executenb(
+  File "/home/danbot/Documents/code/data_analysis/lib/python3.8/site-packages/nbclient/client.py", line 1112, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "/home/danbot/Documents/code/data_analysis/lib/python3.8/site-packages/nbclient/util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "/home/danbot/Documents/code/data_analysis/lib/python3.8/site-packages/nbclient/util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "/usr/lib/python3.8/asyncio/base_events.py", line 616, in run_until_complete
+    return future.result()
+  File "/home/danbot/Documents/code/data_analysis/lib/python3.8/site-packages/nbclient/client.py", line 553, in async_execute
+    await self.async_execute_cell(
+  File "/home/danbot/Documents/code/data_analysis/lib/python3.8/site-packages/nbclient/client.py", line 857, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "/home/danbot/Documents/code/data_analysis/lib/python3.8/site-packages/nbclient/client.py", line 760, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# pandas is a library for manipulating large amounts of data,
+# sort of like Excel without a user interface.
+import pandas as pd
+
+stn1 = '08MG001'
+filename = f'BC_{stn1}_daily_hydrometric.csv'
+
+# import the data for the first station
+df1 = pd.read_csv(datamart_link + filename, 
+                  parse_dates=['Date'], index_col='Date',
+                 infer_datetime_format=True)
+# the 'head' command shows a preview of the data we've downloaded
+df1.head()
+------------------
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mNameError[0m                                 Traceback (most recent call last)
+[0;32m<ipython-input-3-0e3959dcb50b>[0m in [0;36m<module>[0;34m[0m
+[1;32m      7[0m [0;34m[0m[0m
+[1;32m      8[0m [0;31m# import the data for the first station[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 9[0;31m df1 = pd.read_csv(datamart_link + filename, 
+[0m[1;32m     10[0m                   [0mparse_dates[0m[0;34m=[0m[0;34m[[0m[0;34m'Date'[0m[0;34m][0m[0;34m,[0m [0mindex_col[0m[0;34m=[0m[0;34m'Date'[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
+[1;32m     11[0m                  infer_datetime_format=True)
+
+[0;31mNameError[0m: name 'datamart_link' is not defined
+NameError: name 'datamart_link' is not defined
+
