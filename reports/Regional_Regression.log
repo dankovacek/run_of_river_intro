@@ -17,25 +17,30 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-stn_das = {'08MF065': 712,
-          '08MH147': 290,
-          '08MG001': 383}
+# retrive long-term data pre-saved in the data folder
 
-# make a copy of the flow dataframe
-lt_ur = lt_df.copy()
+lt_dfs = []
 for stn in station_list:
-    lt_ur[stn] = 1000 * lt_ur[stn] / stn_das[stn]
+    # I saved long-term data ahead of time in the 'data/' folder
+    filename = f'data/{stn}.csv'
+    
+    df = pd.read_csv(filename, header=13,
+                  parse_dates=['Datetime'], index_col='Datetime',
+                 infer_datetime_format=True)
+    
+    # how many analysis types are there?
+    df.head()
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m<ipython-input-5-eb373570e1a4>[0m in [0;36m<module>[0;34m[0m
-[1;32m      4[0m [0;34m[0m[0m
-[1;32m      5[0m [0;31m# make a copy of the flow dataframe[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 6[0;31m [0mlt_ur[0m [0;34m=[0m [0mlt_df[0m[0;34m.[0m[0mcopy[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
-[0m[1;32m      7[0m [0;32mfor[0m [0mstn[0m [0;32min[0m [0mstation_list[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
-[1;32m      8[0m     [0mlt_ur[0m[0;34m[[0m[0mstn[0m[0;34m][0m [0;34m=[0m [0;36m1000[0m [0;34m*[0m [0mlt_ur[0m[0;34m[[0m[0mstn[0m[0;34m][0m [0;34m/[0m [0mstn_das[0m[0;34m[[0m[0mstn[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[0;32m<ipython-input-10-00451bbd78d2>[0m in [0;36m<module>[0;34m[0m
+[1;32m      2[0m [0;34m[0m[0m
+[1;32m      3[0m [0mlt_dfs[0m [0;34m=[0m [0;34m[[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 4[0;31m [0;32mfor[0m [0mstn[0m [0;32min[0m [0mstation_list[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      5[0m     [0;31m# I saved long-term data ahead of time in the 'data/' folder[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      6[0m     [0mfilename[0m [0;34m=[0m [0;34mf'data/{stn}.csv'[0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mNameError[0m: name 'lt_df' is not defined
-NameError: name 'lt_df' is not defined
+[0;31mNameError[0m: name 'station_list' is not defined
+NameError: name 'station_list' is not defined
 

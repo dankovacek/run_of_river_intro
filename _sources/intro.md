@@ -34,11 +34,11 @@ There's too much to cover in two sessions, so I've picked a few exercises from m
 | Time | Duration | Topic |
 |---|---|---|
 | 2:30 | 10 min | Introduction, Overview |
-| 2:40 | 30 min | Hydropower Resource Assessment |
-| 3:10 | 20 min | Resource ID Exercise: Google Earth |
+| 2:40 | 20 min | Resource ID Exercise: Google Earth |
+| 3:00 | 30 min | Hydropower Fundamentals: Power and Energy from Streamflow (Excel Exercise) |
 | 3:30 | 10 min | break |
-| 3:40 | 35 min | Hydropower Fundamentals: Power and Energy from Streamflow (Excel Exercise) |
-| 4:15 | 25 min | Modern Tools for Data Analysis (Jupyter Notebook intro.) |
+| 3:40 | 45 min | Hydropower Resource Assessment - Jupyter Notebook Exercise |
+| 4:25 | 15 min | Hydropower Resource Assessment Summary |
 | 4:40 | 10 min | break |
 | 4:50 | 30 min | Hydropower In BC: Reading & Discussion |
 
