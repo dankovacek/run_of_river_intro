@@ -7,6 +7,10 @@
   chapters: 
   - file: notebooks/basic_power_notebook
 
+- part: Regional Regression
+  chapters: 
+  - file: notebooks/Regional_Regression
+
 - part: RoR in British Columbia
   chapters:
   - file: notebooks/SiteC
