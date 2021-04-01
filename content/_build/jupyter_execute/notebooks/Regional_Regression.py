@@ -38,18 +38,33 @@ datamart_link_daily = 'https://dd.weather.gc.ca/hydrometric/csv/BC/daily/'
 # you can also get hourly data for the latest 24 hours
 datamart_link_daily = 'https://dd.weather.gc.ca/hydrometric/csv/BC/daily/'
 
+# !pip install pandas bokeh
+
 # pandas is a library for manipulating large amounts of data,
 # sort of like Excel without a user interface.
 import pandas as pd
 
+filename = f'BC_{stn1}_daily_hydrometric.csv'
+
+# import the data for the first station
 
 
 We want to compare flow at the three stations.  Let's put all of the data together into one dataframe.
 
+# create an empty list
+
+# create a list of the station names
+
+
+# loop through the filenames and store each dataframe in the list
 
 
 
+# concatenate the list of dataframes into a single dataframe
+# inner join means to keep only concurrent data (flow values on the same day)
 
+
+# plot the data
 
 
 Now let's compare the three using linear regression.
@@ -63,6 +78,27 @@ from bokeh.io import output_notebook
 
 # this makes the figure render within jupyter instead of a new window
 output_notebook()
+
+# make a regression plot of two stations
+# a regression plot in this case compares flows
+# occurring at the same time in two different places
+# each point coordinate (x, y) --> (q1, q2)
+
+
+
+# retrive long-term data pre-saved in the data folder
+
+lt_dfs = []
+for stn in station_list:
+    # I saved long-term data ahead of time in the 'data/' folder
+    filename = f'data/{stn}.csv'
+    
+    df = pd.read_csv(filename, header=13,
+                  parse_dates=['Datetime'], index_col='Datetime',
+                 infer_datetime_format=True)
+    
+    # how many analysis types are there?
+    df.head()
 
 Find the long-term mean annual discharge (**MAD**) for these three sites.
 
@@ -102,7 +138,7 @@ lt_ur.head()
 
 
 
-## plot daily flows with bokeh for more interactivity
+## Plot daily flows with bokeh for more interactivity
 
 p = figure(width=800, height=400, title=f'Unit Runoff Comparison', x_axis_type='datetime')
 

@@ -245,7 +245,7 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#plot-daily-flows-with-bokeh-for-more-interactivity">
-   plot daily flows with bokeh for more interactivity
+   Plot daily flows with bokeh for more interactivity
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -337,14 +337,52 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># !pip install pandas bokeh</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pandas is a library for manipulating large amounts of data,</span>
 <span class="c1"># sort of like Excel without a user interface.</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;BC_</span><span class="si">{</span><span class="n">stn1</span><span class="si">}</span><span class="s1">_daily_hydrometric.csv&#39;</span>
+
+<span class="c1"># import the data for the first station</span>
 </pre></div>
 </div>
 </div>
 </div>
 <p>We want to compare flow at the three stations.  Let’s put all of the data together into one dataframe.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create an empty list</span>
+
+<span class="c1"># create a list of the station names</span>
+
+
+<span class="c1"># loop through the filenames and store each dataframe in the list</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># concatenate the list of dataframes into a single dataframe</span>
+<span class="c1"># inner join means to keep only concurrent data (flow values on the same day)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># plot the data</span>
+</pre></div>
+</div>
+</div>
+</div>
 <p>Now let’s compare the three using linear regression.</p>
 <p><a class="reference external" href="https://www.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data/introduction-to-trend-lines/a/linear-regression-review">Background information on Linear Regression</a>.</p>
 <p>An excellent library for data visualization is <a class="reference external" href="https://docs.bokeh.org/en/latest/index.html">Bokeh</a>.</p>
@@ -660,6 +698,49 @@
   }
 }(window));</script></div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># make a regression plot of two stations</span>
+<span class="c1"># a regression plot in this case compares flows</span>
+<span class="c1"># occurring at the same time in two different places</span>
+<span class="c1"># each point coordinate (x, y) --&gt; (q1, q2)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># retrive long-term data pre-saved in the data folder</span>
+
+<span class="n">lt_dfs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">stn</span> <span class="ow">in</span> <span class="n">station_list</span><span class="p">:</span>
+    <span class="c1"># I saved long-term data ahead of time in the &#39;data/&#39; folder</span>
+    <span class="n">filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;data/</span><span class="si">{</span><span class="n">stn</span><span class="si">}</span><span class="s1">.csv&#39;</span>
+    
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">13</span><span class="p">,</span>
+                  <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Datetime&#39;</span><span class="p">],</span> <span class="n">index_col</span><span class="o">=</span><span class="s1">&#39;Datetime&#39;</span><span class="p">,</span>
+                 <span class="n">infer_datetime_format</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    
+    <span class="c1"># how many analysis types are there?</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">00451</span><span class="n">bbd78d2</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">lt_dfs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="k">for</span> <span class="n">stn</span> <span class="ow">in</span> <span class="n">station_list</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="c1"># I saved long-term data ahead of time in the &#39;data/&#39; folder</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;data/</span><span class="si">{</span><span class="n">stn</span><span class="si">}</span><span class="s1">.csv&#39;</span>
+
+<span class="ne">NameError</span>: name &#39;station_list&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
 <p>Find the long-term mean annual discharge (<strong>MAD</strong>) for these three sites.</p>
 <p>These mean annual flow numbers look pretty similar.</p>
 <blockquote>
@@ -690,20 +771,6 @@
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">5</span><span class="o">-</span><span class="n">eb373570e1a4</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> 
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="c1"># make a copy of the flow dataframe</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">lt_ur</span> <span class="o">=</span> <span class="n">lt_df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="k">for</span> <span class="n">stn</span> <span class="ow">in</span> <span class="n">station_list</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span>     <span class="n">lt_ur</span><span class="p">[</span><span class="n">stn</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1000</span> <span class="o">*</span> <span class="n">lt_ur</span><span class="p">[</span><span class="n">stn</span><span class="p">]</span> <span class="o">/</span> <span class="n">stn_das</span><span class="p">[</span><span class="n">stn</span><span class="p">]</span>
-
-<span class="ne">NameError</span>: name &#39;lt_df&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -714,7 +781,7 @@
 </div>
 </div>
 <div class="section" id="plot-daily-flows-with-bokeh-for-more-interactivity">
-<h2>plot daily flows with bokeh for more interactivity<a class="headerlink" href="#plot-daily-flows-with-bokeh-for-more-interactivity" title="Permalink to this headline">¶</a></h2>
+<h2>Plot daily flows with bokeh for more interactivity<a class="headerlink" href="#plot-daily-flows-with-bokeh-for-more-interactivity" title="Permalink to this headline">¶</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">figure</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;Unit Runoff Comparison&#39;</span><span class="p">,</span> <span class="n">x_axis_type</span><span class="o">=</span><span class="s1">&#39;datetime&#39;</span><span class="p">)</span>
