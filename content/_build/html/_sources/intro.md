@@ -40,7 +40,7 @@ There's too much to cover in two sessions, so I've picked a few exercises from m
 | 3:40 | 35 min | Hydropower Fundamentals: Power and Energy from Streamflow (Excel Exercise) |
 | 4:15 | 25 min | Modern Tools for Data Analysis (Jupyter Notebook intro.) |
 | 4:40 | 10 min | break |
-| 4:50 | 30 min | Current State of Hydropower In BC: Reading & Discussion |
+| 4:50 | 30 min | Hydropower In BC: Reading & Discussion |
 
 ### Water to Wire
 
@@ -80,6 +80,16 @@ In today's presentation, we use a rough estimate of the amount of energy coming 
 ### Current Data Analysis Tools
 
 This presentation uses the [Jupyter Book](https://jupyterbook.org/intro.html) format, which is not widely used in industry, but is being adopted widely in academia.  Jupyter Book is the combination of an interactive programming environment with a calculation file (*"calc file"* or *"work file"*) that can double as a report.  Work files or calc files are the records that engineers are required to keep as proof of their work.  An interactive work file can let a reviewer not only see the assumptions, but step into the calculation and test sensitivity, and build on ideas.  Below is an example of the type of interactivity that I believe reports can greatly benefit from.  In the discussion about the hydropower in BC, a criticism of the industry is the lack of information available to compare the condition of the aquatic ecosystem pre- and post-project.  Jupyter Book reduces the technological barriers to sharing information with a high level of transparency, but it does require some programming skills.
+
+
+### Introductory Python Resources
+Learning programming skills is challenging, but it's equally rewarding.  There are lots of free, high quality learning resources on the web, a few are listed below.
+
+- [Data Insights with Python for Beginners](https://github.com/ladieslearningcode/llc-intro-to-python) (Copyright [Ladies Learning Code](https://www.canadalearningcode.ca/program/ladies-learning-code/) | [CC BY 4.0 license][CC4 license]) 
+- [U of T Coders Data Carpentry Workshop](https://github.com/UofTCoders/2018-09-10-utoronto) (Copyright [U of T Coders][UT Coders] / [Software Carpentry][Software Carpentry] | [CC BY 4.0 license][CC4 license])
+- [U of T Coders Cartography and Mapping Lesson](https://github.com/UofTCoders/studyGroup/tree/gh-pages/lessons/python/cartography) (Copyright  [U of T Coders][UT Coders] / [Mozilla Science Lab][mozilla] | [Apache License 2.0][Apache 2 license])
+- [Python for Ecologists](http://www.datacarpentry.org/python-ecology-lesson/) (Copyright [Software Carpentry][Software Carpentry] | [CC BY 4.0 license][CC4 license])
+
 
 ```{figure} img/interactive_app.gif
 ---
