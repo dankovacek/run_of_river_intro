@@ -17,30 +17,25 @@ Traceback (most recent call last):
     raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
 nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
 ------------------
-# pandas is a library for manipulating large amounts of data,
-# sort of like Excel without a user interface.
-import pandas as pd
+stn_das = {'08MF065': 712,
+          '08MH147': 290,
+          '08MG001': 383}
 
-stn1 = '08MG001'
-filename = f'BC_{stn1}_daily_hydrometric.csv'
-
-# import the data for the first station
-df1 = pd.read_csv(datamart_link + filename, 
-                  parse_dates=['Date'], index_col='Date',
-                 infer_datetime_format=True)
-# the 'head' command shows a preview of the data we've downloaded
-df1.head()
+# make a copy of the flow dataframe
+lt_ur = lt_df.copy()
+for stn in station_list:
+    lt_ur[stn] = 1000 * lt_ur[stn] / stn_das[stn]
 ------------------
 
 [0;31m---------------------------------------------------------------------------[0m
 [0;31mNameError[0m                                 Traceback (most recent call last)
-[0;32m<ipython-input-3-0e3959dcb50b>[0m in [0;36m<module>[0;34m[0m
-[1;32m      7[0m [0;34m[0m[0m
-[1;32m      8[0m [0;31m# import the data for the first station[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
-[0;32m----> 9[0;31m df1 = pd.read_csv(datamart_link + filename, 
-[0m[1;32m     10[0m                   [0mparse_dates[0m[0;34m=[0m[0;34m[[0m[0;34m'Date'[0m[0;34m][0m[0;34m,[0m [0mindex_col[0m[0;34m=[0m[0;34m'Date'[0m[0;34m,[0m[0;34m[0m[0;34m[0m[0m
-[1;32m     11[0m                  infer_datetime_format=True)
+[0;32m<ipython-input-5-eb373570e1a4>[0m in [0;36m<module>[0;34m[0m
+[1;32m      4[0m [0;34m[0m[0m
+[1;32m      5[0m [0;31m# make a copy of the flow dataframe[0m[0;34m[0m[0;34m[0m[0;34m[0m[0m
+[0;32m----> 6[0;31m [0mlt_ur[0m [0;34m=[0m [0mlt_df[0m[0;34m.[0m[0mcopy[0m[0;34m([0m[0;34m)[0m[0;34m[0m[0;34m[0m[0m
+[0m[1;32m      7[0m [0;32mfor[0m [0mstn[0m [0;32min[0m [0mstation_list[0m[0;34m:[0m[0;34m[0m[0;34m[0m[0m
+[1;32m      8[0m     [0mlt_ur[0m[0;34m[[0m[0mstn[0m[0;34m][0m [0;34m=[0m [0;36m1000[0m [0;34m*[0m [0mlt_ur[0m[0;34m[[0m[0mstn[0m[0;34m][0m [0;34m/[0m [0mstn_das[0m[0;34m[[0m[0mstn[0m[0;34m][0m[0;34m[0m[0;34m[0m[0m
 
-[0;31mNameError[0m: name 'datamart_link' is not defined
-NameError: name 'datamart_link' is not defined
+[0;31mNameError[0m: name 'lt_df' is not defined
+NameError: name 'lt_df' is not defined
 

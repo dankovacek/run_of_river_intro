@@ -1,5 +1,9 @@
 # Estimating Long-Term Runoff using Regional Regression
 
+In this exercise, we'll run through a simplified method of estimating runoff at a potential hydropower location in a basin that hasn't been gauged.  We'll use the Python programming language, we'll access data from the Water Survey of Canada, and we'll make a series of estimates of flow based on other rivers in the area where flow has been measured for a long time.  We'll then use the three regional stations to estimate energy at our project location to see how close they are.  
+
+>The goal is to give you a sense of how much local variability there is in hydrologic conditions in the lower mainland.  
+
 Water Survey of Canada is the government organization that maintains a nation-wide network of streamflow monitoring stations.  There are roughly 2100 active monitoring stations in Canada, and while this is a large number, it is small in comparison to the number of streams and rivers, and the distribution of stations is biased to developed areas.
 
 ![Active Hydrometric Monitoring Stations in Canada](img/CAN_network_map.png)
@@ -27,7 +31,7 @@ stn3 = ''
 
 Below we are going to access daily flows for these stations directly from Datamart.
 
-**Note**: Datamart is for realtime and recent data.  You can find long-ter records for these stations using the [BC Water Tool](https://kwt.bcwatertool.ca/streamflow).
+**Note**: Datamart is for realtime and recent data.  Long-term (historical) records are available for these stations using the [BC Water Tool](https://kwt.bcwatertool.ca/streamflow).
 
 # you can get daily data for the last month
 datamart_link_daily = 'https://dd.weather.gc.ca/hydrometric/csv/BC/daily/'
@@ -38,53 +42,21 @@ datamart_link_daily = 'https://dd.weather.gc.ca/hydrometric/csv/BC/daily/'
 # sort of like Excel without a user interface.
 import pandas as pd
 
-stn1 = '08MG001'
-filename = f'BC_{stn1}_daily_hydrometric.csv'
 
-# import the data for the first station
-df1 = pd.read_csv(datamart_link + filename, 
-                  parse_dates=['Date'], index_col='Date',
-                 infer_datetime_format=True)
-# the 'head' command shows a preview of the data we've downloaded
-df1.head()
 
 We want to compare flow at the three stations.  Let's put all of the data together into one dataframe.
 
-# create an empty list
-all_dfs = []
 
-stn1, stn2, stn3 = '08MH147', '08MF065', '08MG001'
-# create a list of the station names
-station_list = [stn1, stn2, stn3]
 
-# loop through the filenames and store each dataframe in the list
 
-for station in station_list:
-    print(f'Downloading data for {station}...')
-    filename = f'BC_{station}_daily_hydrometric.csv'
-    df = pd.read_csv(datamart_link + filename, 
-                  parse_dates=['Date'], index_col='Date',
-                 infer_datetime_format=True)
-    
-    # create a short form name so we can easily index the column
-    # using the station number
-    df[station] = df['Discharge / Débit (cms)']
-    
-    # append the dataframe to the list 
-    all_dfs.append(df)
 
-# concatenate the list of dataframes into a single dataframe
-# inner join means to keep only concurrent data (flow values on the same day)
-data = pd.concat(all_dfs, join='inner', axis=1)
-# keep just the flow columns
-data = data[[stn1, stn2, stn3]]
-data.head()
 
-data.plot()
 
 Now let's compare the three using linear regression.
 
 [Background information on Linear Regression](https://www.khanacademy.org/math/statistics-probability/describing-relationships-quantitative-data/introduction-to-trend-lines/a/linear-regression-review).
+
+An excellent library for data visualization is [Bokeh](https://docs.bokeh.org/en/latest/index.html).
 
 from bokeh.plotting import figure, show
 from bokeh.io import output_notebook
@@ -92,59 +64,14 @@ from bokeh.io import output_notebook
 # this makes the figure render within jupyter instead of a new window
 output_notebook()
 
-p = figure(width=600, height=400, title=f'{stn1} vs. {stn2}')
-
-p.circle(data[stn1], data[stn2])
-show(p)
-
-p = figure(width=600, height=400, title=f'{stn1} vs. {stn2}')
-
-p.circle(data[stn1], data[stn3])
-show(p)
-
-p = figure(width=600, height=400, title=f'{stn1} vs. {stn2}')
-
-p.circle(data[stn2], data[stn3])
-show(p)
-
-lt_dfs = []
-
-for stn in station_list:
-    # I saved long-term data ahead of time in the 'data/' folder
-    filename = f'data/{stn}.csv'
-    
-    df = pd.read_csv(filename, header=13,
-                  parse_dates=['Datetime'], index_col='Datetime',
-                 infer_datetime_format=True)
-    # how many analysis types are there?
-    print(list(set(df['Analysis'])))
-    
-    # we want just the flow data, not stage!
-    df = df[df['Analysis'] == 'Discharge (m3/s)']
-    
-    # 'Value' isn't really helpful, create a column using our station number
-    df[stn] = df['Value']
-    
-    print(df.head())
-    lt_dfs.append(df)
-
-lt_df = pd.concat(lt_dfs, join='inner', axis=1)[station_list]
-
-lt_df.head()
-
-num_days = len(lt_df)
-print(f'There are {num_days} days of concurrent record between {station_list}')
-
-lt_df.plot()
-
 Find the long-term mean annual discharge (**MAD**) for these three sites.
 
 
-lt_df.mean()
+
 
 These mean annual flow numbers look pretty similar.  
 
->So can we just use this number for our basin and calculate energy?
+>Can we just use this number for our basin and calculate energy?
 
 
 
@@ -154,7 +81,13 @@ These mean annual flow numbers look pretty similar.
 
 Unit area runoff is commonly expressed in $\frac{L}{s \cdot km^2}$ or $mm$.
 
-$$1 \frac{ \so{m^3} }{s} \cdot 1000 \frac{L}{m^3} \div A km^2 = UR \frac{L}{s\cdot km^2}$$
+$$ \frac{1 \frac{m^3}{s} \cdot 1000 \frac{L}{m^3}}{A_{basin} \ km^2} = UR \frac{L}{s\cdot km^2}$$
+
+### Convert Volume to volmeteric flow units
+
+Flow is typically measured in $\frac{m^3}{s}$, but runoff is sometimes reported in $mm$ (same as precipitation), so convert $\frac{mm}{day}$ precipitation to $\frac{m^3}{s}$ runoff (ignore evaporation, interception, infiltration, etc.).
+
+$$1 \frac{mm}{day} \times \frac{1 m}{1000 mm} \times \frac{1 day}{24 h} \times \frac{1 h}{ 3600 s} \times 1 km^2 \times \frac{1000 m \times 1000 m}{1 km^2}= \frac{1}{86.4} \frac{m^3}{s}$$
 
 stn_das = {'08MF065': 712,
           '08MH147': 290,
@@ -167,6 +100,54 @@ for stn in station_list:
 
 lt_ur.head()
 
-# re-calculate the mean on a unit-area basis
-lt_ur.mean()
+
+
+## plot daily flows with bokeh for more interactivity
+
+p = figure(width=800, height=400, title=f'Unit Runoff Comparison', x_axis_type='datetime')
+
+p.line(lt_ur.index, lt_ur[stn1], legend_label=stn1, color='green', alpha=0.5)
+p.line(lt_ur.index, lt_ur[stn2], legend_label=stn2, color='orange', alpha=0.5)
+p.line(lt_ur.index, lt_ur[stn3], legend_label=stn3, color='blue', alpha=0.5)
+
+p.xaxis.axis_label = "Date"
+p.yaxis.axis_label = "Unit Runoff [L/s/km^2]"
+p.legend.click_policy = 'hide'
+show(p)
+
+### Create an Annual Runoff Hydrograph
+
+Looking at daily runoff values is informative for the daily level, but to get an idea of long-term trends, average the data over months and plot monthly values for the 'average' year.  
+
+
+
+### The unit runoff plot tells a very different story of water availability!
+
+Now take the area you estimated earlier for your basin.
+
+>i.e. 80 km^2
+
+And using each of the three regional stations, calculate an approximate flow series for your project location using the ratio of drainage areas.  Since we've already converted the flow series to unit area runoff, we can just multiply by $\frac{Area}{1000}$ to get back to $\frac{m^3}{s}$.
+
+
+
+### Estimate Annual Energy Production 
+
+Using the three regional stations, estimate the long-term annual energy based on a design flow equal to the MAD.
+
+
+
+
+### Calculate monthly energy for a typical year for each estimated series
+
+
+
+### Calculate Expected Annual Energy (and Revenue)
+
+Assume revenue is \$100 per MWh.
+
+
+
+### How close are the three estimates?
+
 
